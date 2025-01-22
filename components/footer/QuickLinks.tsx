@@ -21,16 +21,6 @@ const QuickLinks = () => {
             Image Compressor
           </Link>
         </li>
-        <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
-          <Link href='#' className='hover:underline text-gray-color'>
-            FAQ
-          </Link>
-        </li>
-        <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
-          <Link href='#' className='hover:underline text-gray-color'>
-            Feedback
-          </Link>
-        </li>
       </ul>
     </div>
   );
