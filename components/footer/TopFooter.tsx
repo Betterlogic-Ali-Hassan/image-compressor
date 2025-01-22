@@ -1,12 +1,12 @@
 import React from "react";
-import SquareGridBg from "./SquareGridBg";
+// import SquareGridBg from "./SquareGridBg";
 import Link from "next/link";
 
 const TopFooter = () => {
   return (
     <section className=' mt-[60px]   '>
       <div className='max-w-[1400px] mx-auto px-[2rem]  w-full relative overflow-hidden'>
-        <div className='flex items-center justify-center rounded-2xl border border-border flex-col dark:bg-black  px-8 py-20 text-center md:p-20 '>
+        <div className='flex items-center justify-center rounded-2xl border border-border flex-col bg-foreground  px-8 py-20 text-center md:p-20 '>
           <div className='mx-auto max-w-screen-md '>
             <h2 className=' mb-4 text-balance text-3xl font-semibold md:text-5xl '>
               Double your Productivity, Today
@@ -41,7 +41,7 @@ const TopFooter = () => {
             </Link>
           </div>
         </div>
-        <SquareGridBg />
+        {/* <SquareGridBg /> */}
       </div>
     </section>
   );

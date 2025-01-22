@@ -8,12 +8,27 @@ const QuickLinks = () => {
       <ul className='flex flex-col items-start'>
         <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
           <Link href='#' className='hover:underline text-gray-color'>
+            Home
+          </Link>
+        </li>
+        <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
+          <Link href='#' className='hover:underline text-gray-color'>
             Contact Us
           </Link>
         </li>
         <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
           <Link href='#' className='hover:underline text-gray-color'>
             Image Compressor
+          </Link>
+        </li>
+        <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
+          <Link href='#' className='hover:underline text-gray-color'>
+            FAQ
+          </Link>
+        </li>
+        <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
+          <Link href='#' className='hover:underline text-gray-color'>
+            Feedback
           </Link>
         </li>
       </ul>

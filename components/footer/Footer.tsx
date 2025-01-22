@@ -8,6 +8,7 @@ const Footer = () => {
   return (
     <footer className='border-t border-border mt-[100px] pt-16 pb-8'>
       <div className='footer-container flex  gap-[30px] justify-between  max-[845px]:flex-wrap max-sm:flex-col'>
+        <QuickLinks />
         <FooterLegalSection />
         <QuickLinks />
         <div className='w-[20%] max-[845px]:w-custom'>
@@ -16,6 +17,26 @@ const Footer = () => {
             <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
               <Link href='#' className='hover:underline text-gray-color'>
                 YouTube Thumbnail Downloader
+              </Link>
+            </li>
+            <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
+              <Link href='#' className='hover:underline text-gray-color'>
+                YouTube Video Downloader
+              </Link>
+            </li>
+            <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
+              <Link href='#' className='hover:underline text-gray-color'>
+                YouTube Audio Downloader
+              </Link>
+            </li>
+            <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
+              <Link href='#' className='hover:underline text-gray-color'>
+                AutoRefresh
+              </Link>
+            </li>
+            <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
+              <Link href='#' className='hover:underline text-gray-color'>
+                FileCr
               </Link>
             </li>
           </ul>
