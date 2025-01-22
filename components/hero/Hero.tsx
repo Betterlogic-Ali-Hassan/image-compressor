@@ -1,7 +1,8 @@
 import type React from "react";
 import Card from "./Card";
 import Faqs from "../faqs/Faqs";
-import ImageUploader from "./ImageUploader";
+import LinkInputSection from "./LinkInputSection";
+// import ImageUploader from "./ImageUploader";
 
 const Hero: React.FC = () => (
   <section className='pt-[140px]'>
@@ -13,7 +14,8 @@ const Hero: React.FC = () => (
         Reduce your image size from MB to kB. Compatible with JPG, PNG, and WebP
         formats.
       </p>
-      <ImageUploader />
+      {/* <ImageUploader /> */}
+      <LinkInputSection />
       <Card>
         <h2>
           <strong>Image Compression</strong> Tool

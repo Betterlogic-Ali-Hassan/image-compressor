@@ -12,7 +12,7 @@ const QuickLinks = () => {
           </Link>
         </li>
         <li className='p-[5px] font-medium whitespace-nowrap text-sm mx-[5px]'>
-          <Link href='#' className='hover:underline text-gray-color'>
+          <Link href='/contact' className='hover:underline text-gray-color'>
             Contact Us
           </Link>
         </li>
