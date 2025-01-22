@@ -49,7 +49,7 @@ const LinkInputSection = () => {
         </Button>
       </div>
       <p className='text-sm mt-2'>
-        By using our service you accept out{" "}
+        By using our service you accept our{" "}
         <a href='#' className='underline text-primary '>
           Terms of Service
         </a>{" "}
