@@ -4,7 +4,7 @@ import Faqs from "../faqs/Faqs";
 import ImageUploader from "./ImageUploader";
 
 const Hero: React.FC = () => (
-  <section className='pt-[120px]'>
+  <section className='pt-[140px]'>
     <div className='container'>
       <h1>
         <strong>Image Compressor</strong> from MB to KB
