@@ -48,6 +48,16 @@ const LinkInputSection = () => {
           Paste Link
         </Button>
       </div>
+      <p className='text-sm mt-2'>
+        By using our service you accept out{" "}
+        <a href='#' className='underline text-primary '>
+          Terms of Service
+        </a>{" "}
+        and{" "}
+        <a href='/privacy' className='underline text-primary '>
+          Privacy Policy
+        </a>{" "}
+      </p>
     </Card>
   );
 };
