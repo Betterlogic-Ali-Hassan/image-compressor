@@ -11,22 +11,17 @@ body {
   :root {
     --background: #fff;
     --primary-color: #00bc7e;
-    --card-border: rgba(0, 188, 125, 0.295);
-    --border-color: #ebebf0;
+    --border-color: #e8e8e8;
     --foreground-color: #f4f4f6;
     --text-color: #21222c;
-    --my-shadow: 0 4px 8px rgba(0, 188, 126, 0.06);
-    --head-shadow: 0 4px 8px rgba(0, 188, 125, 0.164);
     --gray-color: #515152;
   }
   .dark {
     --background: #13141a;
     --primary-color: #00bc7e;
-    --card-border: rgba(0, 188, 125, 0.295);
     --border-color: #282a36;
     --foreground-color: #21222c;
     --text-color: #f4f4f6;
-    --shadow: 0 4px 8px rgba(0, 188, 126, 0.06);
     --gray-color: #ababae;
   }
 }
@@ -53,12 +48,6 @@ body {
   strong {
     @apply font-bold text-primary;
   }
-}
-.head-shadow {
-  box-shadow: var(--head-shadow);
-}
-.card-shadow {
-  box-shadow: var(--my-shadow);
 }
 .container {
   max-width: 800px;

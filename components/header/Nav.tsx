@@ -17,15 +17,31 @@ const Nav = () => {
   const imageCompressionData = imageCompressionOption;
   const dataPages = ["Contact Us", "Privacy Policy", "Terms of Service"];
   const [openDropdowns, setOpenDropdowns] = useState([false, false]);
+  const [timeoutIds, setTimeoutIds] = useState<number[]>([]);
 
   const handleMouseEnter = (index: number) => {
+    // Clear any existing timeout for this index
+    clearTimeout(timeoutIds[index]);
+
     setOpenDropdowns((prev) =>
       prev.map((_, i) => (i === index ? true : false))
     );
   };
 
-  const handleMouseLeave = () => {
-    setOpenDropdowns([false, false]);
+  const handleMouseLeave = (index: number) => {
+    // Set a timeout to close the dropdown after 2 seconds
+    const id = window.setTimeout(() => {
+      setOpenDropdowns((prev) =>
+        prev.map((open, i) => (i === index ? false : open))
+      );
+    }, 400);
+
+    // Store the timeout ID to clear if necessary
+    setTimeoutIds((prev) => {
+      const updated = [...prev];
+      updated[index] = id;
+      return updated;
+    });
   };
 
   return (
@@ -44,7 +60,7 @@ const Nav = () => {
             className='ml-2'
             key={i}
             onMouseEnter={() => handleMouseEnter(i)}
-            onMouseLeave={handleMouseLeave}
+            onMouseLeave={() => handleMouseLeave(i)}
           >
             <DropdownMenu open={openDropdowns[i]} modal={false}>
               <DropdownMenuTrigger className='flex items-center !border-none cursor-pointer !shadow-none p-2 hover:text-primary transition-colors duration-200 text-sm font-semibold outline-none !ring-0'>

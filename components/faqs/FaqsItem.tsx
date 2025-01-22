@@ -14,10 +14,10 @@ const FaqsItem = () => {
           <AccordionItem
             key={i}
             value={`item-${i}`}
-            className='border rounded-[0.5rem] px-5 mb-[15px] py-[6px] border-primary-border card-shadow'
+            className='border rounded-[0.5rem] px-5 py-0 border-border mb-4 '
           >
-            <AccordionTrigger className='text-sm font-bold hover:no-underline py-0'>
-              {faq.question}
+            <AccordionTrigger className='hover:no-underline !my-0 py-[17px] '>
+              <h6 className='text-sm font-bold  '> {faq.question}</h6>
             </AccordionTrigger>
             <AccordionContent>{faq.answer}</AccordionContent>
           </AccordionItem>

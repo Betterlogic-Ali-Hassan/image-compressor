@@ -22,8 +22,6 @@ export default {
   			},
 			"gray-color" : 'var(--gray-color)',
   			border: 'var(--border-color)',
-  			myShadow: 'var(--my-shadow)',
-  			headShadow: 'var(--head-shadow)'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
