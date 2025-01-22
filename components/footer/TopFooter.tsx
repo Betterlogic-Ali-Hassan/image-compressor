@@ -4,23 +4,22 @@ import Link from "next/link";
 
 const TopFooter = () => {
   return (
-    <section className='relative mt-[60px] px-5 py-16 md:py-28 bg-zinc-950 overflow-hidden'>
-      <div></div>
-      <div className='container'>
-        <div className='flex flex-col items-center text-center mx-auto max-w-6xl relative z-20'>
-          <div>
-            <h2 className=' text-4xl font-semibold tracking-tight transition-colors lg:text-5xl text-white items-center text-center '>
+    <section className=' mt-[60px]   '>
+      <div className='max-w-[1400px] mx-auto px-[2rem]  w-full relative overflow-hidden'>
+        <div className='flex items-center justify-center rounded-2xl border border-border flex-col dark:bg-black  px-8 py-20 text-center md:p-20 '>
+          <div className='mx-auto max-w-screen-md '>
+            <h2 className=' mb-4 text-balance text-3xl font-semibold md:text-5xl '>
               Double your Productivity, Today
             </h2>
-            <p className='mt-3 block text-base leading-relaxed transition-colors md:text-lg md:leading-relaxed lg:mt-5 lg:text-xl lg:leading-relaxed text-zinc-400 items-center text-center mx-auto max-w-2xl'>
+            <p className='text-[#71717a] md:text-lg'>
               With Writekit, you can easily access a continuous flow of ideas.
               Our AI tools make writing feel natural, helping you avoid the
               empty page and inspire fresh thoughts.
             </p>
           </div>
-          <div className='mt-6 flex justify-center'>
+          <div className='mt-11 flex justify-center relative z-30'>
             <Link
-              className='inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap border no-underline transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 focus:border-zinc-500 dark:border-zinc-100 dark:bg-zinc-100 dark:text-black dark:hover:border-white h-10 px-5 text-base rounded-full font-medium border-white bg-white dark:hover:bg-[#dadada] hover:bg-[#dadada]  '
+              className='inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90 h-11 rounded-[10px] gap-2 px-8 '
               href='#'
             >
               Get Productive Today
@@ -31,7 +30,7 @@ const TopFooter = () => {
                 viewBox='0 0 24 24'
                 strokeLinecap='round'
                 strokeLinejoin='round'
-                className='h-4 w-4 shrink-0'
+                className='h-4 w-4 shrink-0 mt-0.5'
                 height='1em'
                 width='1em'
                 xmlns='http://www.w3.org/2000/svg'

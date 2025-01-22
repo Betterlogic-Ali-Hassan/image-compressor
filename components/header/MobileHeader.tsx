@@ -21,7 +21,7 @@ const MobileHeader = () => {
   return (
     <div className='md:hidden block font-semibold'>
       <Sheet>
-        <SheetTrigger className='bg-background h-8 w-8  flex items-center justify-center ml-4 border rounded-[6px]'>
+        <SheetTrigger className='bg-background h-8 w-8  flex items-center justify-center ml-4 border border-border rounded-[6px]'>
           <FiMenu size={18} />
         </SheetTrigger>
         <SheetContent side='left' className='p-0'>

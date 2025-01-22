@@ -50,7 +50,7 @@ const Nav = () => {
               <DropdownMenuTrigger className='flex items-center !border-none cursor-pointer !shadow-none p-2 hover:text-primary transition-colors duration-200 text-sm font-semibold outline-none !ring-0'>
                 {item}
               </DropdownMenuTrigger>
-              <DropdownMenuContent className='mr-2'>
+              <DropdownMenuContent className='mr-2 border-border'>
                 {(i === 0 ? imageCompressionData : dataPages).map((item, j) => (
                   <DropdownMenuItem
                     key={j}

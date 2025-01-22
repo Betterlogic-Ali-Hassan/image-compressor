@@ -33,7 +33,7 @@ body {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-black;
   }
   body {
     @apply bg-background text-text;

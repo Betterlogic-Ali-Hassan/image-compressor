@@ -18,10 +18,10 @@ const ImageSizeSelector = () => {
         className='h-[40px] flex-1 rounded-[6px] px-[10px] appearance-none text-sm bg-background border border-border transition duration-300 outline-none focus:border-primary placeholder:text-[#888]'
       />
       <Select>
-        <SelectTrigger className='w-[70px] h-[40px]'>
+        <SelectTrigger className='w-[70px] h-[40px] border-border'>
           <SelectValue placeholder='KB' />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className='border-border'>
           <SelectItem value='KB'>KB</SelectItem>
           <SelectItem value='MB'>MB</SelectItem>
         </SelectContent>
