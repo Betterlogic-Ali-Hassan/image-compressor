@@ -12,11 +12,11 @@ const LinkInputSection = () => {
   const [url, setUrl] = useState("");
   const handlePasteLink = () => {
     setLoader(true);
+    navigator.clipboard.readText().then((text) => {
+      setUrl(text);
+    });
     setTimeout(() => {
       setLoader(false);
-      navigator.clipboard.readText().then((text) => {
-        setUrl(text);
-      });
       setMediaBoxShow(true);
     }, 2000);
   };
@@ -25,7 +25,7 @@ const LinkInputSection = () => {
   };
   return (
     <Card className={cn(mediaBoxShow && "pb-1")}>
-      <div className='flex items-center gap-3 relative'>
+      <div className='flex items-center gap-3 relative max-sm:flex-col'>
         <input
           type='text'
           name='url'
@@ -45,7 +45,7 @@ const LinkInputSection = () => {
         )}
 
         <Button
-          className='bg-black dark:bg-white text-white dark:text-black flex items-center gap-2 h-[62px] rounded-[8px] hover:bg-black/90 dark:bg-white/90  max-w-[150px] w-full'
+          className='bg-black dark:bg-white text-white dark:text-black flex items-center gap-2 h-[62px] rounded-[8px] hover:bg-black/90 dark:bg-white/90  sm:max-w-[150px] w-full'
           onClick={handlePasteLink}
         >
           {loader && <Loader2 size={20} className='animate-spin' />}

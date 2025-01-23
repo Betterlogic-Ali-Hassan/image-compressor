@@ -65,7 +65,7 @@ const PopUp: React.FC<PopProps> = ({ sliderValue, formatTime }) => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button className='relative rounded-[10px] bg-black dark:bg-white text-white dark:text-black'>
+        <Button className='relative rounded-[10px] bg-black dark:bg-white text-white dark:text-black hover:bg-black/90 dark:bg-white/90'>
           <VideoIcon className='mr-2' />
           Download
           <Badge

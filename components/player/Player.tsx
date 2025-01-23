@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import PopUp from "./PopUp";
 import VideoPlayer from "./VideoPlayer";
 import Card from "../hero/Card";
+import PlayerSkelton from "./PlayerSkelton";
 
 const Player: React.FC = () => {
   const [play, setPlay] = useState<boolean>(false);
@@ -31,7 +32,7 @@ const Player: React.FC = () => {
   const [sliderValue, setSliderValue] = useState<[number, number]>([0, 0]);
   const [hoverTime, setHoverTime] = useState<number | null>(null);
   const [hoverPosition, setHoverPosition] = useState<number>(0);
-
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const formatTime = (time: number): string => {
     const hours = Math.floor(time / 3600);
     const minutes = Math.floor((time / 60) % 60);
@@ -127,7 +128,7 @@ const Player: React.FC = () => {
 
   return (
     <div className='mt-[140px]'>
-      <main className='max-w-3xl mx-auto  space-y-8'>
+      <main className='container'>
         <Card className='p-0'>
           <div className='px-4 sm:px-10 pt-10 flex   mb-4 flex-col gap-1'>
             <h1 className=' text-2xl text-left md:text-4xl font-bold tracking-tight'>
@@ -137,71 +138,79 @@ const Player: React.FC = () => {
               A carousel with motion and swipe built using Embla.
             </p>
           </div>
-          <div className='px-4 sm:px-10 pb-10'>
-            <VideoPlayer
-              url='https://www.youtube.com/embed/RD4JPW6mKaU'
-              playing={play}
-              muted={mute}
-              onDuration={handleDuration}
-              onProgress={handleProgress}
-              videoRef={videoRef}
-            />
-            <ProgressBar
-              duration={duration}
-              currentTime={currentTime}
-              sliderValue={sliderValue}
-              handleProgressBarClick={handleProgressBarClick}
-              handleProgressBarHover={handleProgressBarHover}
-              handleProgressBarLeave={handleProgressBarLeave}
-              hoverTime={hoverTime}
-              hoverPosition={hoverPosition}
-              formatTime={formatTime}
-            />
-          </div>
-          <div className='flex items-center flex-col gap-4 text-center px-7 sm:px-10'>
-            <MultiSlider
-              defaultValue={sliderValue}
-              min={0}
-              max={duration}
-              value={sliderValue}
-              onValueChange={handleSliderChange}
-            />
-            <Controls
-              play={play}
-              mute={mute}
-              togglePlay={togglePlay}
-              toggleMute={toggleMute}
-              replay={replay}
-            />
-          </div>
-          <div className='px-4 sm:px-10 pt-8 pb-20 flex gap-5 sm:gap-4 items-center justify-center sm:justify-between flex-wrap'>
-            <TimeAdjuster
-              sliderValue={sliderValue}
-              setSliderValue={setSliderValue}
-              duration={duration}
-              formatTime={formatTime}
-              videoRef={videoRef}
-            />
-            <div className='flex items-center gap-4'>
-              <PopUp sliderValue={sliderValue} formatTime={formatTime} />
-              <TooltipProvider delayDuration={0}>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      size='icon'
-                      variant='outline'
-                      className='w-12 h-10 rounded-[10px] border-border hover:bg-foreground cursor-pointer'
-                    >
-                      <Music className='h-4 w-4' />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Download mp3</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-          </div>
+          {!videoLoaded ? (
+            <PlayerSkelton />
+          ) : (
+            <>
+              {" "}
+              <div className='px-4 sm:px-10 pb-10'>
+                <VideoPlayer
+                  url='https://www.youtube.com/embed/RD4JPW6mKaU'
+                  playing={play}
+                  muted={mute}
+                  setVideoLoaded={setVideoLoaded}
+                  onDuration={handleDuration}
+                  onProgress={handleProgress}
+                  videoRef={videoRef}
+                />
+                <ProgressBar
+                  duration={duration}
+                  currentTime={currentTime}
+                  sliderValue={sliderValue}
+                  handleProgressBarClick={handleProgressBarClick}
+                  handleProgressBarHover={handleProgressBarHover}
+                  handleProgressBarLeave={handleProgressBarLeave}
+                  hoverTime={hoverTime}
+                  hoverPosition={hoverPosition}
+                  formatTime={formatTime}
+                />
+              </div>
+              <div className='flex items-center flex-col gap-4 text-center px-7 sm:px-10'>
+                <MultiSlider
+                  defaultValue={sliderValue}
+                  min={0}
+                  max={duration}
+                  value={sliderValue}
+                  onValueChange={handleSliderChange}
+                />
+                <Controls
+                  play={play}
+                  mute={mute}
+                  togglePlay={togglePlay}
+                  toggleMute={toggleMute}
+                  replay={replay}
+                />
+              </div>
+              <div className='px-4 sm:px-10 pt-8 pb-20 flex gap-5 sm:gap-4 items-center justify-center sm:justify-between flex-wrap'>
+                <TimeAdjuster
+                  sliderValue={sliderValue}
+                  setSliderValue={setSliderValue}
+                  duration={duration}
+                  formatTime={formatTime}
+                  videoRef={videoRef}
+                />
+                <div className='flex items-center gap-4'>
+                  <PopUp sliderValue={sliderValue} formatTime={formatTime} />
+                  <TooltipProvider delayDuration={0}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button
+                          size='icon'
+                          variant='outline'
+                          className='w-12 h-10 rounded-[10px] border-border hover:bg-foreground cursor-pointer'
+                        >
+                          <Music className='h-4 w-4' />
+                        </Button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Download mp3</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+              </div>
+            </>
+          )}
         </Card>
       </main>
     </div>

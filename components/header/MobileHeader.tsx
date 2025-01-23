@@ -24,7 +24,7 @@ const MobileHeader = () => {
         <SheetTrigger className='bg-background h-8 w-8  flex items-center justify-center ml-4 border border-border rounded-[6px]'>
           <FiMenu size={18} />
         </SheetTrigger>
-        <SheetContent side='left' className='p-0'>
+        <SheetContent side='left' className='p-0 overflow-y-auto'>
           <SheetHeader>
             <SheetTitle className='p-7 border-b border-border mb-0 '>
               <Logo />
@@ -34,7 +34,7 @@ const MobileHeader = () => {
                 <li className='mb-[10px] w-full'>
                   <Link
                     href='#'
-                    className='text-primary bg-foreground py-[7px] px-[15px] rounded-[5px] w-full block font-semibold'
+                    className='text-primary bg-foreground py-[7px] px-[15px] rounded-[5px] w-full block font-semibold text-left'
                   >
                     Home
                   </Link>
@@ -51,7 +51,7 @@ const MobileHeader = () => {
                     <li className='mb-[10px]' key={i}>
                       <Link
                         href='#'
-                        className='hover:text-primary  py-[7px] px-[15px] rounded-[5px] block font-semibold'
+                        className='hover:text-primary text-left py-[7px] px-[15px] rounded-[5px] block font-semibold'
                       >
                         {item}
                       </Link>
@@ -60,7 +60,7 @@ const MobileHeader = () => {
                 <li className='mb-[10px]'>
                   <Link
                     href='#'
-                    className='hover:text-primary  py-[7px] px-[15px] rounded-[5px] block font-semibold'
+                    className='hover:text-primary  py-[7px] px-[15px] text-left rounded-[5px] block font-semibold'
                   >
                     Contact Us
                   </Link>
@@ -68,7 +68,7 @@ const MobileHeader = () => {
                 <li className='mb-[10px]'>
                   <Link
                     href='#'
-                    className='hover:text-primary  py-[7px] px-[15px] rounded-[5px] block font-semibold'
+                    className='hover:text-primary text-left py-[7px] px-[15px] rounded-[5px] block font-semibold'
                   >
                     Privacy Policy
                   </Link>
@@ -76,7 +76,7 @@ const MobileHeader = () => {
                 <li className='mb-[10px]'>
                   <Link
                     href='#'
-                    className='hover:text-primary  py-[7px] px-[15px] rounded-[5px] block font-semibold'
+                    className='hover:text-primary text-left py-[7px] px-[15px] rounded-[5px] block font-semibold'
                   >
                     Terms of Service
                   </Link>

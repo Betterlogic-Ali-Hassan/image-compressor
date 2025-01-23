@@ -15,6 +15,7 @@ interface VideoPlayerProps {
     loadedSeconds: number;
   }) => void;
   videoRef: RefObject<{ seekTo: (time: number) => void } | null>;
+  setVideoLoaded: (loaded: boolean) => void;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
@@ -24,6 +25,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   onDuration,
   onProgress,
   videoRef,
+  setVideoLoaded,
 }) => (
   <div className='relative h-0 pb-[56.25%]'>
     <ReactPlayer
@@ -35,6 +37,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       onProgress={onProgress}
       width='100%'
       height='100%'
+      onReady={() => setVideoLoaded(true)}
       className='absolute top-0 left-0 rounded-[10px]'
     />
   </div>

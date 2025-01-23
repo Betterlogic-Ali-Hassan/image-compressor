@@ -42,7 +42,7 @@ const TimeAdjuster: React.FC<TimeAdjusterProps> = ({
   };
 
   return (
-    <div className='flex items-center gap-4'>
+    <div className='flex items-center gap-4 max-[400px]:flex-col'>
       <div className='flex items-center gap-1 rounded-[10px] border border-border bg-transparent pl-2 pr-1 h-10 text-sm shadow-sm transition-colors w-full sm:max-w-[13rem]'>
         <input
           type='text'
