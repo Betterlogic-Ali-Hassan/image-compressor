@@ -17,7 +17,7 @@ const MediaResultBox = () => {
     setQualityRowsShow(true);
   };
   return (
-    <div className='mb-5 mt-6 border border-border rounded-[6px]   bg-foreground overflow-hidden flex'>
+    <div className='mb-5 mt-6 border border-border rounded-[6px]   bg-foreground overflow-hidden flex max-[650px]:flex-col'>
       <div>
         <Image
           src='/test.jpg'
@@ -30,7 +30,7 @@ const MediaResultBox = () => {
       </div>
       <div
         className={cn(
-          "py-[18px] pb-1 px-[26px] min-h-[115px] max-w-[375px] w-full ",
+          "py-[18px] min-[650px]:pb-1 pb-6 px-3 min-[650px]:px-[26px] min-h-[115px] max-w-[375px] w-full ",
           qualityRowsShow && "pb-[18px]"
         )}
       >
@@ -80,7 +80,7 @@ const MediaResultBox = () => {
         <div
           className={cn(
             "transition-all duration-1000 ease-in-out overflow-hidden",
-            qualityRowsShow ? "max-h-[550px]" : "max-h-0"
+            qualityRowsShow ? "max-h-[550px] overflow-y-hidden" : "max-h-0"
           )}
         >
           <ResultQualityRows />

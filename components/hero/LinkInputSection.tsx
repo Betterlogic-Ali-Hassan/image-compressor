@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { Button } from "../ui/button";
 import { Loader2, X } from "lucide-react";
@@ -10,21 +11,34 @@ const LinkInputSection = () => {
   const [loader, setLoader] = useState(false);
   const [mediaBoxShow, setMediaBoxShow] = useState(false);
   const [url, setUrl] = useState("");
+
   const handlePasteLink = () => {
-    setLoader(true);
     navigator.clipboard.readText().then((text) => {
       setUrl(text);
     });
-    setTimeout(() => {
-      setLoader(false);
-      setMediaBoxShow(true);
-    }, 2000);
   };
+
   const handleClearLink = () => {
     setUrl("");
+    setLoader(false);
   };
+
+  useEffect(() => {
+    if (url !== "") {
+      setLoader(true);
+      const timer = setTimeout(() => {
+        setLoader(false);
+        setMediaBoxShow(true);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    } else {
+      setLoader(false);
+    }
+  }, [url]);
+
   return (
-    <Card className={cn(mediaBoxShow && "pb-1")}>
+    <Card className={cn("max-[650px]:p-5", mediaBoxShow && "pb-1")}>
       <div className='flex items-center gap-3 relative max-sm:flex-col'>
         <input
           type='text'
@@ -33,11 +47,11 @@ const LinkInputSection = () => {
           onChange={(e) => setUrl(e.target.value)}
           id='url'
           placeholder='Enter URL'
-          className='text-sm bg-foreground p-5 border border-border  rounded-[8px] w-full h-full max-h-[62px]'
+          className='text-sm bg-foreground p-5 border border-border rounded-[8px] w-full h-full max-h-[62px]'
         />
         {url !== "" && (
           <span
-            className='absolute right-1/4 group  bg-foreground cursor-pointer'
+            className='absolute right-1/4 group bg-foreground rounded-full cursor-pointer'
             onClick={handleClearLink}
           >
             <X className='opacity-50 group-hover:opacity-100' />
@@ -45,11 +59,11 @@ const LinkInputSection = () => {
         )}
 
         <Button
-          className='bg-black dark:bg-white text-white dark:text-black flex items-center gap-2 h-[62px] rounded-[8px] hover:bg-black/90 dark:bg-white/90  sm:max-w-[150px] w-full'
+          className='bg-black dark:bg-white text-white dark:text-black flex items-center gap-2 h-[62px] rounded-[8px] hover:bg-black/90 dark:hover:bg-white/90 sm:max-w-[150px] w-full'
           onClick={handlePasteLink}
         >
           {loader && <Loader2 size={20} className='animate-spin' />}
-          Paste Link
+          {loader ? "Processing..." : "Paste Link"}
         </Button>
       </div>
       <p className='text-sm mt-2'>
@@ -65,7 +79,7 @@ const LinkInputSection = () => {
       <div
         className={cn(
           "transition-all duration-1000 ease-in-out overflow-hidden",
-          mediaBoxShow ? "max-h-[550px]" : "max-h-0"
+          mediaBoxShow ? " max-h-[550px] max-[650px]:max-h-[900px]" : "max-h-0"
         )}
       >
         <MediaResultBox />
