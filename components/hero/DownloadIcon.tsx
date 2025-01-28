@@ -9,6 +9,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { CircularProgress } from "./DownloadProgress";
+import { cn } from "@/lib/utils";
 
 export const DownloadIcon: React.FC = () => {
   const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -55,7 +56,10 @@ export const DownloadIcon: React.FC = () => {
           onClick={simulateDownload}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className='hover:bg-[#ddd] dark:hover:bg-gray-700 h-8 w-8 rounded-full flex items-center justify-center'
+          className={cn(
+            "hover:bg-[#ddd] dark:hover:bg-gray-600 h-10 w-10 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center",
+            isDownloading && "bg-transparent dark:bg-transparent"
+          )}
         >
           {isDownloading ? (
             <CircularProgress progress={progress} />

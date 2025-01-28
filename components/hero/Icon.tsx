@@ -20,7 +20,7 @@ export const Icon = ({ tooltip, icon }: Props) => {
         <TooltipTrigger
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className='hover:bg-[#ddd] dark:hover:bg-gray-700 h-8 w-8 rounded-full flex items-center justify-center'
+          className='hover:bg-[#ddd] dark:hover:bg-gray-600 h-10 w-10 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center'
         >
           {icon}
         </TooltipTrigger>
