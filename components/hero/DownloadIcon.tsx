@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FiDownload } from "react-icons/fi";
+
 import {
   Tooltip,
   TooltipContent,
@@ -49,7 +49,16 @@ export const DownloadIcon: React.FC = () => {
           {isDownloading ? (
             <CircularProgress progress={progress} />
           ) : (
-            <FiDownload className='sm:h-[22px] sm:w-[22px] h-[17px] w-[17px]' />
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              height='24px'
+              viewBox='0 -960 960 960'
+              width='24px'
+              fill='#000000'
+              className='sm:w-[22px] sm:h-[22px] h-[19px] w-[19px] '
+            >
+              <path d='M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z' />
+            </svg>
           )}
         </TooltipTrigger>
         <TooltipContent>
