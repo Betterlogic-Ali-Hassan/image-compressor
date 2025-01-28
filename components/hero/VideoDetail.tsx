@@ -3,12 +3,12 @@ import React from "react";
 
 const VideoDetail = () => {
   return (
-    <div className='flex items-center gap-2 mt-6'>
+    <div className='flex items-center gap-2 mt-6 bg-foreground py-3 px-4 rounded-t-[0.5rem] '>
       <Image
         src='/test.jpg'
         alt='Video-Thumbnail'
-        height={60}
-        width={110}
+        height={48}
+        width={80}
         className='rounded-[4px]'
       />
       <div className='flex flex-col'>
