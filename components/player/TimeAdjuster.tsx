@@ -43,7 +43,7 @@ const TimeAdjuster: React.FC<TimeAdjusterProps> = ({
 
   return (
     <div className='flex items-center gap-4 max-[400px]:flex-col'>
-      <div className='flex items-center gap-1 rounded-[10px] border border-border bg-transparent pl-2 pr-1 h-10 text-sm shadow-sm transition-colors w-full sm:max-w-[13rem]'>
+      <div className='flex items-center gap-1 rounded-[7px] border border-border bg-transparent px-2 h-11 text-sm shadow-sm transition-colors w-full sm:max-w-[13.5rem]'>
         <input
           type='text'
           placeholder='00:00:00'
@@ -54,19 +54,19 @@ const TimeAdjuster: React.FC<TimeAdjusterProps> = ({
         <Button
           size='icon'
           onClick={decrementStart}
-          className='w-12 h-8 border-border hover:bg-black/90 dark:bg-white/90 rounded-[7px] bg-black dark:bg-white text-background'
+          className='w-12 h-[34px] border-border hover:bg-black/90 dark:bg-white/90 rounded-[7px] bg-black dark:bg-white text-background'
         >
-          <Minus className='w-4 h-4' />
+          <Minus className='w-[18px] h-[18px]' />
         </Button>
         <Button
           size='icon'
           onClick={incrementStart}
-          className='w-12 h-8 border-border  rounded-[7px] bg-black dark:bg-white text-background hover:bg-black/90 dark:bg-white/90'
+          className='w-12 h-[34px] border-border  rounded-[7px] bg-black dark:bg-white text-background hover:bg-black/90 dark:bg-white/90'
         >
-          <Plus className='w-4 h-4' />
+          <Plus className='w-[18px] h-[18px]' />
         </Button>
       </div>
-      <div className='flex items-center gap-1 rounded-[10px] border border-border bg-transparent pl-2 pr-1 h-10 text-sm shadow-sm transition-colors w-full sm:max-w-[13rem]'>
+      <div className='flex items-center gap-1 rounded-[8px] border border-border bg-transparent px-2 h-11 text-sm shadow-sm transition-colors w-full sm:max-w-[13.5rem]'>
         <input
           type='text'
           placeholder='00:00:00'
@@ -77,16 +77,16 @@ const TimeAdjuster: React.FC<TimeAdjusterProps> = ({
         <Button
           size='icon'
           onClick={decrementEnd}
-          className='w-12 h-8 border-border hover:bg-black/90 dark:bg-white/90 rounded-[7px] bg-black dark:bg-white text-background'
+          className='w-12 h-[34px] border-border hover:bg-black/90 dark:bg-white/90 rounded-[7px] bg-black dark:bg-white text-background'
         >
-          <Minus className='w-4 h-4' />
+          <Minus className='w-[18px] h-[18px]' />
         </Button>
         <Button
           size='icon'
           onClick={incrementEnd}
-          className='w-12 h-8 border-border hover:bg-black/90 dark:bg-white/90 rounded-[7px] bg-black dark:bg-white text-background'
+          className='w-12 h-[34px] border-border hover:bg-black/90 dark:bg-white/90 rounded-[7px] bg-black dark:bg-white text-background'
         >
-          <Plus className='w-4 h-4' />
+          <Plus className='w-[18px] h-[18px]' />
         </Button>
       </div>
     </div>
