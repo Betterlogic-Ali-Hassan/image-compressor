@@ -8,9 +8,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { QRCodeIcon } from "./QRCodeIcon";
 import CopyIcon from "./CopyIcon";
 import { DownloadIcon } from "./DownloadIcon";
+import { Icon } from "./Icon";
 
 interface ResultQualityProps {
   item: {
@@ -56,10 +56,67 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
         </TooltipProvider>
       </div>
 
-      <div className='flex items-center gap-1'>
+      <div className='flex items-center gap-2'>
         <DownloadIcon />
+        <Icon
+          icon={
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              className='sm:w-[20px] sm:h-[20px] h-[18px] w-[18px] '
+            >
+              <path d='M9 18V5l12-2v13'></path>
+              <circle cx='6' cy='18' r='3'></circle>
+              <circle cx='18' cy='16' r='3'></circle>
+            </svg>
+          }
+          tooltip='MP3'
+        />
+        <Icon
+          icon={
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              className='sm:w-[20px] sm:h-[20px] h-[16px] w-[16px] '
+            >
+              <circle cx='6' cy='6' r='3'></circle>
+              <path d='M8.12 8.12 12 12'></path>
+              <path d='M20 4 8.12 15.88'></path>
+              <circle cx='6' cy='18' r='3'></circle>
+              <path d='M14.8 14.8 20 20'></path>
+            </svg>
+          }
+          tooltip='Trim Video'
+        />
         <CopyIcon />
-        <QRCodeIcon />
+        <Icon
+          icon={
+            <svg
+              stroke='currentColor'
+              fill='currentColor'
+              strokeWidth='0'
+              version='1.1'
+              viewBox='0 0 16 16'
+              height='18'
+              width='18'
+              className='sm:w-[18px] sm:h-[18px] h-[16px] w-[16px] '
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path d='M5 1h-4v4h4v-4zM6 0v0 6h-6v-6h6zM2 2h2v2h-2zM15 1h-4v4h4v-4zM16 0v0 6h-6v-6h6zM12 2h2v2h-2zM5 11h-4v4h4v-4zM6 10v0 6h-6v-6h6zM2 12h2v2h-2zM7 0h1v1h-1zM8 1h1v1h-1zM7 2h1v1h-1zM8 3h1v1h-1zM7 4h1v1h-1zM8 5h1v1h-1zM7 6h1v1h-1zM7 8h1v1h-1zM8 9h1v1h-1zM7 10h1v1h-1zM8 11h1v1h-1zM7 12h1v1h-1zM8 13h1v1h-1zM7 14h1v1h-1zM8 15h1v1h-1zM15 8h1v1h-1zM1 8h1v1h-1zM2 7h1v1h-1zM0 7h1v1h-1zM4 7h1v1h-1zM5 8h1v1h-1zM6 7h1v1h-1zM9 8h1v1h-1zM10 7h1v1h-1zM11 8h1v1h-1zM12 7h1v1h-1zM13 8h1v1h-1zM14 7h1v1h-1zM15 10h1v1h-1zM9 10h1v1h-1zM10 9h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM14 9h1v1h-1zM15 12h1v1h-1zM9 12h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM13 12h1v1h-1zM14 11h1v1h-1zM15 14h1v1h-1zM10 13h1v1h-1zM11 14h1v1h-1zM12 13h1v1h-1zM13 14h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1z'></path>
+            </svg>
+          }
+          tooltip='QrCode'
+        />
       </div>
     </div>
   );
