@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import { Loader2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ResultQualityRows from "./ResultQualityRows";
+import VideoDetail from "./VideoDetail";
 
 const LinkInputSection = () => {
   const [loader, setLoader] = useState(false);
@@ -66,7 +67,7 @@ const LinkInputSection = () => {
           {loader ? "Processing..." : "Paste Link"}
         </Button>
       </div>
-      <p className='text-sm mt-2'>
+      <p className={cn("text-sm mt-2", mediaBoxShow && "hidden")}>
         By using our service you accept our{" "}
         <a href='#' className='underline text-primary '>
           Terms of Service
@@ -79,9 +80,12 @@ const LinkInputSection = () => {
       <div
         className={cn(
           "transition-all duration-1000 ease-in-out overflow-hidden",
-          mediaBoxShow ? " max-h-[550px] max-[650px]:max-h-[900px]" : "max-h-0"
+          mediaBoxShow
+            ? " max-h-[800px] max-[650px]:max-h-[900px] pb-2"
+            : "max-h-0"
         )}
       >
+        <VideoDetail />
         <ResultQualityRows />
       </div>
     </Card>
