@@ -29,17 +29,6 @@ export const quality = [
       "quality": "2K",
       "size": "650MB"
     },
-    {
-      "format": "MOV",
-      "resolution": "2160p",
-      "quality": "4K",
-      "size": "650MB"
-    },
-    {
-      "format": "MP4",
-      "resolution": "4320p",
-      "quality": "8K",
-      "size": "650MB"
-    }
+  
   ]
   

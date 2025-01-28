@@ -51,7 +51,7 @@ const LinkInputSection = () => {
         />
         {url !== "" && (
           <span
-            className='absolute right-1/4 group bg-foreground rounded-full cursor-pointer'
+            className='absolute right-3 max-sm:top-[15%] sm:right-1/4 group bg-foreground rounded-full cursor-pointer'
             onClick={handleClearLink}
           >
             <X className='opacity-50 group-hover:opacity-100' />
@@ -66,7 +66,7 @@ const LinkInputSection = () => {
           {loader ? "Processing..." : "Paste Link"}
         </Button>
       </div>
-      <p className='text-sm mt-2'>
+      {/* <p className='text-sm mt-2'>
         By using our service you accept our{" "}
         <a href='#' className='underline text-primary '>
           Terms of Service
@@ -75,7 +75,7 @@ const LinkInputSection = () => {
         <a href='/privacy' className='underline text-primary '>
           Privacy Policy
         </a>{" "}
-      </p>
+      </p> */}
       <div
         className={cn(
           "transition-all duration-1000 ease-in-out overflow-hidden",

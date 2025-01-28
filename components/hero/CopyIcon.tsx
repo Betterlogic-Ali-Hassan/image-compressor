@@ -26,7 +26,7 @@ const CopyIcon = () => {
           className='hover:bg-gray-200 dark:hover:bg-gray-700 h-8 w-8 rounded-full flex items-center justify-center'
         >
           <CopyToClipboard text='www.google.com' onCopy={handleCopy}>
-            <MdContentCopy size={17} />
+            <MdContentCopy size={20} />
           </CopyToClipboard>
         </TooltipTrigger>
         <TooltipContent>
