@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import PopUp from "./PopUp";
+import PopUp from "./DownloadBtn";
 import VideoPlayer from "./VideoPlayer";
 import Card from "../hero/Card";
 

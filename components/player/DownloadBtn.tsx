@@ -22,7 +22,7 @@ const DownloadBtn: React.FC<PopProps> = ({ sliderValue, formatTime }) => {
 
   return (
     <Button
-      className='relative rounded-[10px] bg-black dark:bg-white text-white dark:text-black hover:bg-black/90 h-11 dark:bg-white/90'
+      className='relative rounded-[10px] bg-black  text-white  hover:bg-black/90 h-11 dark:bg-gray-700 dark:hover:bg-gray-600'
       onClick={handleDownload}
     >
       {isLoading ? (
