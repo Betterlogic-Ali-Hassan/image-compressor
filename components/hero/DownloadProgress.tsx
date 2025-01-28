@@ -42,7 +42,7 @@ export function CircularProgress({
           cy={size / 2}
         />
       </svg>
-      <span className='absolute text-xs font-medium flex items-center justify-center left-[50%] right-[50%]'>
+      <span className='absolute text-xs font-medium flex items-center justify-center '>
         {Math.round(progress)}%
       </span>
     </div>
