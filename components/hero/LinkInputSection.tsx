@@ -22,6 +22,7 @@ const LinkInputSection = () => {
   const handleClearLink = () => {
     setUrl("");
     setLoader(false);
+    setMediaBoxShow(false);
   };
 
   useEffect(() => {
