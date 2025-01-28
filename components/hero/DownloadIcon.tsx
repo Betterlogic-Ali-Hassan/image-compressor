@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { Loader2 } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -13,12 +13,14 @@ import { CircularProgress } from "./DownloadProgress";
 export const DownloadIcon: React.FC = () => {
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [progress, setProgress] = useState(0);
 
   const handleMouseEnter = () => setTooltipVisible(true);
   const handleMouseLeave = () => setTooltipVisible(false);
 
   const simulateDownload = () => {
+    if (isDownloading || isLoading) return;
     setIsDownloading(true);
     setProgress(0);
 
@@ -26,10 +28,6 @@ export const DownloadIcon: React.FC = () => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setTimeout(() => {
-            setIsDownloading(false);
-            setProgress(0);
-          }, 500);
           return 100;
         }
         return prev + 2;
@@ -37,9 +35,22 @@ export const DownloadIcon: React.FC = () => {
     }, 50);
   };
 
+  useEffect(() => {
+    if (progress === 100) {
+      setTimeout(() => {
+        setIsDownloading(false);
+        setIsLoading(true);
+        setTimeout(() => {
+          setIsLoading(false);
+          setProgress(0);
+        }, 2000);
+      }, 200);
+    }
+  }, [progress]);
+
   return (
     <TooltipProvider delayDuration={1}>
-      <Tooltip open={tooltipVisible && !isDownloading}>
+      <Tooltip open={tooltipVisible && !isDownloading && !isLoading}>
         <TooltipTrigger
           onClick={simulateDownload}
           onMouseEnter={handleMouseEnter}
@@ -48,14 +59,16 @@ export const DownloadIcon: React.FC = () => {
         >
           {isDownloading ? (
             <CircularProgress progress={progress} />
+          ) : isLoading ? (
+            <Loader2 className='sm:w-[22px] sm:h-[22px] h-[19px] w-[19px] animate-spin' />
           ) : (
             <svg
               xmlns='http://www.w3.org/2000/svg'
               height='24px'
               viewBox='0 -960 960 960'
               width='24px'
-              fill='#000000'
-              className='sm:w-[22px] sm:h-[22px] h-[19px] w-[19px] '
+              fill='currentColor'
+              className='sm:w-[22px] sm:h-[22px] h-[19px] w-[19px]'
             >
               <path d='M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z' />
             </svg>

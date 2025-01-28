@@ -4,7 +4,7 @@ import ResultQuality from "./ResultQuality";
 
 const ResultQualityRows = () => {
   return (
-    <div className='mt-4 '>
+    <div className=' mt-1'>
       {quality.map((item, i) => (
         <ResultQuality key={i} item={item} />
       ))}

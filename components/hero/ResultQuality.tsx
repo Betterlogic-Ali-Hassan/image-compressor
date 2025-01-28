@@ -27,7 +27,7 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
   const handleMouseLeave = () => setTooltipVisible(false);
 
   return (
-    <div className='flex items-center  w-full text-xs mt-2 justify-between  py-2 bg-foreground px-3  rounded-[0.5rem]'>
+    <div className='flex items-center  w-full text-xs mb-2 justify-between  py-2 bg-foreground px-3  rounded-[0.5rem]'>
       <div className='sm:w-[50%] w-[80%] relative'>
         <TooltipProvider delayDuration={1}>
           <Tooltip open={tooltipVisible}>
@@ -65,9 +65,9 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
               viewBox='0 0 24 24'
               fill='none'
               stroke='currentColor'
-              stroke-width='2'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
               className='sm:w-[20px] sm:h-[20px] h-[18px] w-[18px] '
             >
               <path d='M9 18V5l12-2v13'></path>
@@ -84,9 +84,9 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
               viewBox='0 0 24 24'
               fill='none'
               stroke='currentColor'
-              stroke-width='2'
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
               className='sm:w-[20px] sm:h-[20px] h-[16px] w-[16px] '
             >
               <circle cx='6' cy='6' r='3'></circle>
