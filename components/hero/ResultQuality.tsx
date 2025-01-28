@@ -27,14 +27,14 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
   const handleMouseLeave = () => setTooltipVisible(false);
 
   return (
-    <div className='flex items-center  w-full text-xs mt-2 justify-between  py-2 bg-foreground pr-3  rounded-[0.5rem]'>
+    <div className='flex items-center  w-full text-xs mt-2 justify-between  py-2 bg-foreground px-3  rounded-[0.5rem]'>
       <div className='sm:w-[50%] w-[80%] relative'>
         <TooltipProvider delayDuration={1}>
           <Tooltip open={tooltipVisible}>
             <TooltipTrigger
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className='w-full flex items-center  py-2.5 px-3.5 pl-4 cursor-pointer font-medium text-left text-xs sm:text-base'
+              className='w-full flex items-center  py-2.5 px-3.5 pl-5 pr-0 cursor-pointer font-medium text-left text-xs sm:text-base rounded-[0.5rem] hover:bg-[#ddd] dark:hover:bg-[#374151]'
             >
               <span className='min-[650px]:w-[30%] w-[33%]'>{item.format}</span>
               <span className='min-[650px]:w-[30%] w-[33%]'>

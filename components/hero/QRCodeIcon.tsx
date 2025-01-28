@@ -16,7 +16,7 @@ export const QRCodeIcon: React.FC = () => {
         <TooltipTrigger
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className='hover:bg-gray-200 dark:hover:bg-gray-700 h-8 w-8 rounded-full flex items-center justify-center'
+          className='hover:bg-[#ddd] dark:hover:bg-gray-700 h-8 w-8 rounded-full flex items-center justify-center'
         >
           <svg
             stroke='currentColor'
