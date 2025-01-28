@@ -26,8 +26,8 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
   const handleMouseLeave = () => setTooltipVisible(false);
 
   return (
-    <div className='flex items-center min-[650px]:w-[95%] w-full text-xs mt-2'>
-      <div className='w-full relative'>
+    <div className='flex items-center min-[650px]:w-[62%] w-full text-xs mt-2 justify-between'>
+      <div className='w-[70%] relative'>
         <TooltipProvider delayDuration={1}>
           <Tooltip open={tooltipVisible}>
             <TooltipTrigger

@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import { Button } from "../ui/button";
 import { Loader2, X } from "lucide-react";
-import MediaResultBox from "./MediaResultBox";
 import { cn } from "@/lib/utils";
+import ResultQualityRows from "./ResultQualityRows";
 
 const LinkInputSection = () => {
   const [loader, setLoader] = useState(false);
@@ -82,7 +82,7 @@ const LinkInputSection = () => {
           mediaBoxShow ? " max-h-[550px] max-[650px]:max-h-[900px]" : "max-h-0"
         )}
       >
-        <MediaResultBox />
+        <ResultQualityRows />
       </div>
     </Card>
   );
