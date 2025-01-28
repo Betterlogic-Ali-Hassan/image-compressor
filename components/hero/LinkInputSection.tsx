@@ -81,7 +81,7 @@ const LinkInputSection = () => {
         className={cn(
           "transition-all duration-1000 ease-in-out overflow-hidden",
           mediaBoxShow
-            ? " max-h-[800px] max-[650px]:max-h-[900px] pb-2"
+            ? " max-h-[800px] max-[650px]:max-h-[900px] pb-6"
             : "max-h-0"
         )}
       >
