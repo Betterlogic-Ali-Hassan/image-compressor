@@ -33,9 +33,9 @@ const Controls: React.FC<ControlsProps> = ({
             size='icon'
             variant='outline'
             onClick={replay}
-            className='w-12 h-10 border-border hover:bg-foreground rounded-[10px]'
+            className='hover:bg-[#ddd] dark:hover:bg-gray-600 h-10 w-10 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center border-none'
           >
-            <ReplyAll className='w-4 h-4' />
+            <ReplyAll className='h-[18px] w-[18px]' />
           </Button>
         </TooltipTrigger>
         <TooltipContent>
@@ -51,12 +51,12 @@ const Controls: React.FC<ControlsProps> = ({
             size='icon'
             variant='outline'
             onClick={togglePlay}
-            className='w-12 h-10 border-border hover:bg-foreground rounded-[10px]'
+            className='hover:bg-[#ddd] dark:hover:bg-gray-600 h-10 w-10 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center border-none'
           >
             {play ? (
-              <Pause className='w-4 h-4' />
+              <Pause className='h-[18px] w-[18px]' />
             ) : (
-              <Play className='w-4 h-4' />
+              <Play className='h-[18px] w-[18px]' />
             )}
           </Button>
         </TooltipTrigger>
@@ -73,12 +73,12 @@ const Controls: React.FC<ControlsProps> = ({
             size='icon'
             variant='outline'
             onClick={toggleMute}
-            className='w-12 h-10 border-border hover:bg-foreground rounded-[10px]'
+            className='hover:bg-[#ddd] dark:hover:bg-gray-600 h-10 w-10 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center border-none'
           >
             {!mute ? (
-              <Volume2 className='h-4 w-4' />
+              <Volume2 className='h-[18px] w-[18px]' />
             ) : (
-              <VolumeX className='h-4 w-4' />
+              <VolumeX className='h-[18px] w-[18px]' />
             )}
           </Button>
         </TooltipTrigger>

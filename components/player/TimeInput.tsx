@@ -26,16 +26,16 @@ const TimeInput: React.FC<TimeInputProps> = ({
     <Button
       size='icon'
       onClick={onDecrement}
-      className='w-12 h-8 border-border hover:bg-foreground rounded-[10px] bg-black dark:bg-white text-background'
+      className='w-12 h-8 border-border hover:bg-foreground rounded-[7px] bg-black dark:bg-white text-background'
     >
-      <Minus className='w-4 h-4' />
+      <Minus className='h-[18px] w-[18px]' />
     </Button>
     <Button
       size='icon'
       onClick={onIncrement}
-      className='w-12 h-8 border-border hover:bg-foreground rounded-[10px] bg-black dark:bg-white text-background'
+      className='w-12 h-8 border-border hover:bg-foreground rounded-[7px] bg-black dark:bg-white text-background'
     >
-      <Plus className='w-4 h-4' />
+      <Plus className='h-[18px] w-[18px]' />
     </Button>
   </div>
 );

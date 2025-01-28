@@ -189,9 +189,9 @@ const Player: React.FC = () => {
                     <Button
                       size='icon'
                       variant='outline'
-                      className='w-12 h-10 rounded-[10px] border-border hover:bg-foreground cursor-pointer'
+                      className='hover:bg-[#ddd] dark:hover:bg-gray-600 h-10 w-10 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center border-none'
                     >
-                      <Music className='h-4 w-4' />
+                      <Music className='h-[18px] w-[18px]' />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
