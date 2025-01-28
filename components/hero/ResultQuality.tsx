@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import { QRCodeIcon } from "./QRCodeIcon";
 import CopyIcon from "./CopyIcon";
+import { DownloadIcon } from "./DownloadIcon";
 
 interface ResultQualityProps {
   item: {
@@ -27,20 +28,20 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
 
   return (
     <div className='flex items-center  w-full text-xs mt-2 justify-between pb-2'>
-      <div className='w-[50%] relative'>
+      <div className='sm:w-[50%] w-[80%] relative'>
         <TooltipProvider delayDuration={1}>
           <Tooltip open={tooltipVisible}>
             <TooltipTrigger
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className='w-full flex items-center pl-0 py-2.5 px-3.5 hover:bg-black/10 cursor-pointer font-medium text-base'
+              className='w-full flex items-center pl-0 py-2.5 px-3.5 hover:bg-black/10 cursor-pointer font-medium text-xs sm:text-base'
             >
               <span className='min-[650px]:w-[30%] w-[33%]'>{item.format}</span>
               <span className='min-[650px]:w-[30%] w-[33%]'>
                 {item.resolution}
               </span>
               <span className='min-[650px]:w-[30%] w-[33%]'>
-                <div className='inline-flex items-center border py-0.5 px-1 bg-black text-white rounded text-xs font-medium hover:bg-black/80 transition-colors'>
+                <div className='inline-flex items-center border py-0.5 px-1 bg-black text-white rounded text-[10px] sm:text-xs font-medium hover:bg-black/80 transition-colors'>
                   {item.quality}
                 </div>
               </span>
@@ -55,7 +56,8 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
         </TooltipProvider>
       </div>
 
-      <div className='flex items-center'>
+      <div className='flex items-center gap-1'>
+        <DownloadIcon />
         <CopyIcon />
         <QRCodeIcon />
       </div>
