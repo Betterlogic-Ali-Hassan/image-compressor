@@ -37,7 +37,7 @@ const AddtoChromeBtn = ({
             <Image src='/foxi.webp' alt='img' height={62} width={62} />
           </div>
           <div>
-            <h3 className='text-[15px] max-[450px]:text-sm leading-[1.4] font-normal mt-0'>
+            <h3 className='text-[15px] max-[450px]:text-[13px] leading-[1.4] font-normal mt-0'>
               <strong>Foxified</strong> The extension is required for YouTube
               Mp3 Converter to work properly.
             </h3>
