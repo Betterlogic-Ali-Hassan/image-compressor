@@ -6,7 +6,7 @@ import LinkInputSection from "./LinkInputSection";
 
 const Hero: React.FC = () => (
   <section className='pt-[140px]'>
-    <div className='container'>
+    <div className='hero-container'>
       <h1>
         <strong>Image Compressor</strong> from MB to KB
       </h1>
