@@ -42,23 +42,25 @@ const LinkInputSection = () => {
   return (
     <Card className={cn("max-[650px]:p-5", mediaBoxShow && "pb-1")}>
       <div className='flex items-center gap-3 relative max-sm:flex-col'>
-        <input
-          type='text'
-          name='url'
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          id='url'
-          placeholder='Enter URL'
-          className='text-sm bg-foreground p-5 border border-border rounded-[8px] w-full h-full max-h-[62px]'
-        />
-        {url !== "" && (
-          <span
-            className='absolute right-3 max-sm:top-[15%] sm:right-1/4 group bg-foreground rounded-full cursor-pointer'
-            onClick={handleClearLink}
-          >
-            <X className='opacity-50 group-hover:opacity-100' />
-          </span>
-        )}
+        <div className=' bg-foreground p-5 border border-border rounded-[8px] w-full h-full max-h-[62px] flex items-center justify-between'>
+          <input
+            type='text'
+            name='url'
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            id='url'
+            placeholder='Enter URL'
+            className='text-sm bg-transparent border-none h-full outline-none'
+          />
+          {url !== "" && (
+            <span
+              className=' group bg-foreground rounded-full cursor-pointer'
+              onClick={handleClearLink}
+            >
+              <X className='opacity-50 group-hover:opacity-100' />
+            </span>
+          )}
+        </div>
 
         <Button
           className='bg-black dark:bg-white text-white dark:text-black flex items-center gap-2 h-[62px] rounded-[8px] hover:bg-black/90 dark:hover:bg-white/90 sm:max-w-[150px] w-full'
