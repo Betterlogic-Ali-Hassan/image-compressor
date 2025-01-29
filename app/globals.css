@@ -129,3 +129,7 @@ input::-webkit-inner-spin-button {
   font-weight: 700;
   letter-spacing: 1px;
 }
+.back-to-top:hover {
+  transform: scale(1.075);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
