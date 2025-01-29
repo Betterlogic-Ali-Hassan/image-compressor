@@ -4,7 +4,7 @@ import Card from "./hero/Card";
 const Contact = () => {
   return (
     <section className='mt-[140px] '>
-      <div className='container max-w-[1100px]'>
+      <div className='hero-container max-w-[1100px]'>
         <Card>
           <h1>Contact Us</h1>
           <form className='mt-6'>
