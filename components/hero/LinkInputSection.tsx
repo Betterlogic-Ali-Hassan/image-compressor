@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Card from "./Card";
 import { Button } from "../ui/button";
 import { Loader2, X } from "lucide-react";
@@ -12,6 +12,7 @@ const LinkInputSection = () => {
   const [loader, setLoader] = useState(false);
   const [mediaBoxShow, setMediaBoxShow] = useState(false);
   const [url, setUrl] = useState("");
+  const mediaBoxRef = useRef<HTMLDivElement>(null);
 
   const handlePasteLink = () => {
     navigator.clipboard.readText().then((text) => {
@@ -38,6 +39,13 @@ const LinkInputSection = () => {
       setLoader(false);
     }
   }, [url]);
+
+  useEffect(() => {
+    if (mediaBoxShow && mediaBoxRef.current) {
+      const mediaBoxHeight = mediaBoxRef.current.scrollHeight - 120;
+      window.scrollBy({ top: mediaBoxHeight, behavior: "smooth" });
+    }
+  }, [mediaBoxShow]);
 
   return (
     <Card className={cn("max-[650px]:p-5", mediaBoxShow && "pb-1")}>
@@ -81,6 +89,7 @@ const LinkInputSection = () => {
         </a>{" "}
       </p>
       <div
+        ref={mediaBoxRef}
         className={cn(
           "transition-all duration-1000 ease-in-out overflow-hidden",
           mediaBoxShow
