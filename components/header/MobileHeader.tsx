@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import {
   Sheet,
@@ -12,6 +13,7 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { imageCompressionOption } from "@/constant/imageCompressionOption";
 import { ChevronDown } from "lucide-react";
+import AddtoChromeBtn from "./AddtoChromeBtn";
 
 const MobileHeader = () => {
   const [showOptions, setShowOptions] = useState(false);
@@ -21,8 +23,8 @@ const MobileHeader = () => {
   return (
     <div className='md:hidden block font-semibold'>
       <Sheet>
-        <SheetTrigger className='bg-background h-8 w-8  flex items-center justify-center ml-4 border border-border rounded-[6px]'>
-          <FiMenu size={18} />
+        <SheetTrigger className='bg-background h-9 w-9  flex items-center justify-center ml-4 border border-border rounded-[6px]'>
+          <FiMenu size={19} />
         </SheetTrigger>
         <SheetContent side='left' className='p-0 overflow-y-auto'>
           <SheetHeader>
@@ -83,6 +85,7 @@ const MobileHeader = () => {
                 </li>
               </ul>
             </SheetDescription>
+            <AddtoChromeBtn className='mx-4 mt-0' />
           </SheetHeader>
         </SheetContent>
       </Sheet>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { imageCompressionOption } from "@/constant/imageCompressionOption";
-import MobileHeader from "./MobileHeader";
 
 const Nav = () => {
   const imageCompressionData = imageCompressionOption;
@@ -50,7 +49,7 @@ const Nav = () => {
         <li className='ml-2'>
           <Link
             href='/'
-            className='p-2 hover:text-primary transition-colors duration-200 text-sm font-semibold text-primary'
+            className='p-2 hover:text-primary transition-colors duration-200 text-base font-semibold text-primary'
           >
             Home
           </Link>
@@ -63,7 +62,7 @@ const Nav = () => {
             onMouseLeave={() => handleMouseLeave(i)}
           >
             <DropdownMenu open={openDropdowns[i]} modal={false}>
-              <DropdownMenuTrigger className='flex items-center !border-none cursor-pointer !shadow-none p-2 hover:text-primary transition-colors duration-200 text-sm font-semibold outline-none !ring-0'>
+              <DropdownMenuTrigger className='flex items-center !border-none cursor-pointer !shadow-none p-2 hover:text-primary transition-colors duration-200  font-semibold outline-none !ring-0 text-base'>
                 {item}
               </DropdownMenuTrigger>
               <DropdownMenuContent className='mr-2 border-border'>
@@ -80,8 +79,6 @@ const Nav = () => {
           </li>
         ))}
       </ul>
-      <ThemeToggle />
-      <MobileHeader />
     </nav>
   );
 };

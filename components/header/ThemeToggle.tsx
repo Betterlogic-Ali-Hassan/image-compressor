@@ -13,10 +13,10 @@ const ThemeToggle = () => {
     <Button
       variant='outline'
       size='icon'
-      className='h-8 w-8 rounded-[6px] border-border ml-5 shadow-sm hover:bg-foreground'
+      className='h-9 w-9 rounded-[6px] border-border ml-5 shadow-sm hover:bg-foreground'
       onClick={toggleTheme}
     >
-      {theme === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
+      {theme === "dark" ? <FiSun size={19} /> : <FiMoon size={19} />}
     </Button>
   );
 };

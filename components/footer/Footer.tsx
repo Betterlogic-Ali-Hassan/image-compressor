@@ -7,7 +7,7 @@ import Logo from "../header/Logo";
 const Footer = () => {
   return (
     <footer className='border-t border-border mt-[100px] pt-16 pb-8'>
-      <div className='footer-container flex  gap-[30px] justify-between  max-[845px]:flex-wrap max-sm:flex-col'>
+      <div className='container flex  gap-[30px] justify-between  max-[845px]:flex-wrap max-sm:flex-col'>
         <QuickLinks />
         <FooterLegalSection />
         <QuickLinks />
@@ -42,7 +42,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className='footer-container !pb-0'>
+      <div className='container !pb-0'>
         <div className='pt-8 border-t border-border'>
           <div className='flex items-center justify-between'>
             <Logo />
