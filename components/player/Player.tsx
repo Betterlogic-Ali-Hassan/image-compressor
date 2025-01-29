@@ -172,7 +172,7 @@ const Player: React.FC = () => {
               replay={replay}
             />
           </div>
-          <div className='px-4 sm:px-10 pt-8 pb-20 flex gap-5 sm:gap-4 items-center justify-center sm:justify-between flex-wrap'>
+          <div className='px-4 md:px-10 pt-8 pb-20 flex gap-5 sm:gap-4 items-center justify-center md:justify-between flex-wrap max-[500px]:flex-col'>
             <TimeAdjuster
               sliderValue={sliderValue}
               setSliderValue={setSliderValue}

@@ -45,7 +45,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
           width={getPercentage(duration - sliderValue[1])}
         />
         <ProgressSegment
-          className='bg-green-700 z-10'
+          className='bg-primary dark:bg-primary z-10'
           width={getPercentage(currentTime)}
         />
       </div>

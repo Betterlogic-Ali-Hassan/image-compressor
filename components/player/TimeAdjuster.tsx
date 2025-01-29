@@ -42,8 +42,8 @@ const TimeAdjuster: React.FC<TimeAdjusterProps> = ({
   };
 
   return (
-    <div className='flex items-center gap-4 max-[400px]:flex-col'>
-      <div className='flex items-center gap-1 rounded-[7px] border border-border bg-transparent px-2 h-11 text-sm shadow-sm transition-colors w-full sm:max-w-[13.5rem]'>
+    <div className='flex items-center gap-4 max-[500px]:flex-col'>
+      <div className='flex items-center gap-1 rounded-[7px] border border-border bg-transparent px-2 h-11 text-sm shadow-sm transition-colors w-full md:max-w-[13.5rem]'>
         <input
           type='text'
           placeholder='00:00:00'
@@ -66,7 +66,7 @@ const TimeAdjuster: React.FC<TimeAdjusterProps> = ({
           <Plus className='w-[18px] h-[18px]' />
         </Button>
       </div>
-      <div className='flex items-center gap-1 rounded-[8px] border border-border bg-transparent px-2 h-11 text-sm shadow-sm transition-colors w-full sm:max-w-[13.5rem]'>
+      <div className='flex items-center gap-1 rounded-[8px] border border-border bg-transparent px-2 h-11 text-sm shadow-sm transition-colors w-full md:max-w-[13.5rem]'>
         <input
           type='text'
           placeholder='00:00:00'

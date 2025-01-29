@@ -50,7 +50,7 @@ const LinkInputSection = () => {
             onChange={(e) => setUrl(e.target.value)}
             id='url'
             placeholder='Enter URL'
-            className='text-sm bg-transparent border-none h-full outline-none'
+            className='text-sm bg-transparent border-none h-full outline-none w-full'
           />
           {url !== "" && (
             <span
