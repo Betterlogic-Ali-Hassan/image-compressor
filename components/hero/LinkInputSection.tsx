@@ -11,6 +11,13 @@ import VideoDetail from "./VideoDetail";
 const LinkInputSection = () => {
   const [loader, setLoader] = useState(false);
   const [mediaBoxShow, setMediaBoxShow] = useState(false);
+  const [error, setError] = useState("");
+  const isValidUrl = (url: string) => {
+    const urlPattern =
+      /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+    return urlPattern.test(url);
+  };
+
   const [url, setUrl] = useState("");
   const mediaBoxRef = useRef<HTMLDivElement>(null);
 
@@ -19,7 +26,16 @@ const LinkInputSection = () => {
       setUrl(text);
     });
   };
+  const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputUrl = e.target.value;
+    setUrl(inputUrl);
 
+    if (inputUrl && !isValidUrl(inputUrl)) {
+      setError("URL is not supported");
+    } else {
+      setError("");
+    }
+  };
   const handleClearLink = () => {
     setUrl("");
     setLoader(false);
@@ -27,7 +43,7 @@ const LinkInputSection = () => {
   };
 
   useEffect(() => {
-    if (url !== "") {
+    if (url !== "" && error === "") {
       setLoader(true);
       const timer = setTimeout(() => {
         setLoader(false);
@@ -55,10 +71,10 @@ const LinkInputSection = () => {
             type='text'
             name='url'
             value={url}
-            onChange={(e) => setUrl(e.target.value)}
+            onChange={handleUrlChange}
             id='url'
             placeholder='Enter URL'
-            className=' bg-transparent border-none h-full outline-none w-full text-base'
+            className=' bg-transparent border-none outline-none w-full text-base  h-[62px]'
           />
           {url !== "" && (
             <span
@@ -78,6 +94,9 @@ const LinkInputSection = () => {
           {loader ? "Processing..." : "Paste Link"}
         </Button>
       </div>
+      {error && url !== "" && (
+        <p className='text-red-500 text-sm mt-2'>{error}</p>
+      )}
       <p className={cn("text-sm mt-2", mediaBoxShow && "hidden")}>
         By using our service you accept our{" "}
         <a href='#' className='underline text-primary '>

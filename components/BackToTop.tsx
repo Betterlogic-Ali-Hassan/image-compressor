@@ -5,6 +5,7 @@ const BackToTop = () => {
   return (
     <ScrollToTop
       smooth
+      top={500}
       className='!bg-text !h-14 !w-14 !rounded-full flex items-center text-background justify-center back-to-top'
       component={
         <svg

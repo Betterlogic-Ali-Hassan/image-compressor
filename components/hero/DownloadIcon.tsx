@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Loader2 } from "lucide-react";
+import { LucideLoaderCircle } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -64,7 +64,7 @@ export const DownloadIcon: React.FC = () => {
           {isDownloading ? (
             <CircularProgress progress={progress} />
           ) : isLoading ? (
-            <Loader2 className='sm:w-[22px] sm:h-[22px] h-[19px] w-[19px] animate-spin' />
+            <LucideLoaderCircle className='sm:w-[22px] sm:h-[22px] h-[19px] w-[19px] animate-spin' />
           ) : (
             <svg
               xmlns='http://www.w3.org/2000/svg'

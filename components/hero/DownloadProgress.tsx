@@ -16,8 +16,8 @@ export function CircularProgress({
   const offset = circumference - (progress / 100) * circumference;
 
   return (
-    <div className='relative inline-flex items-center justify-center'>
-      <svg className='transform -rotate-90' width={size} height={size}>
+    <div className='relative inline-flex items-center justify-center max-sm:mr-3'>
+      <svg className='transform -rotate-90 ' width={size} height={size}>
         {/* Background circle */}
         <circle
           className='text-[#ddd] dark:text-gray-700 '

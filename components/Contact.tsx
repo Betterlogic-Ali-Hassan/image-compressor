@@ -1,10 +1,13 @@
 import React from "react";
 import Card from "./hero/Card";
 
+import Alerts from "./Alerts";
+
 const Contact = () => {
   return (
-    <section className='mt-[140px] '>
+    <section className='mt-[52px] '>
       <div className='hero-container max-w-[1100px]'>
+        <Alerts />
         <Card>
           <h1>Contact Us</h1>
           <form className='mt-6'>

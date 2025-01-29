@@ -85,7 +85,7 @@ const MobileHeader = () => {
                 </li>
               </ul>
             </SheetDescription>
-            <AddtoChromeBtn className='mx-4 mt-0' />
+            <AddtoChromeBtn className='mx-4 mt-0' mobile />
           </SheetHeader>
         </SheetContent>
       </Sheet>

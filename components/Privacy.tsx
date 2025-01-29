@@ -3,7 +3,7 @@ import Card from "./hero/Card";
 
 const Privacy = () => {
   return (
-    <section className=' mt-[140px] '>
+    <section className=' mt-[52px] '>
       <div className='hero-container '>
         <Card>
           <h1 className='text-left'>Terms &amp; Conditions</h1>

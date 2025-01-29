@@ -5,7 +5,7 @@ import LinkInputSection from "./LinkInputSection";
 // import ImageUploader from "./ImageUploader";
 
 const Hero: React.FC = () => (
-  <section className='pt-[140px]'>
+  <section className='pt-[52px]'>
     <div className='hero-container'>
       <h1>
         <strong>Image Compressor</strong> from MB to KB
