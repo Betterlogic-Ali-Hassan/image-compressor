@@ -28,20 +28,20 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
 
   return (
     <div className='flex items-center  gap-2 w-full text-xs mb-2 justify-between  py-2 bg-foreground max-sm:pl-1 px-3  rounded-[0.5rem]'>
-      <div className='w-[50%]  relative'>
+      <div className='sm:w-[50%] w-[55%]  relative'>
         <TooltipProvider delayDuration={1}>
           <Tooltip open={tooltipVisible}>
             <TooltipTrigger
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className='w-full flex items-center  py-2.5 px-3.5 sm:pl-5 pl-2 pr-0 cursor-pointer font-medium text-left text-xs sm:text-base rounded-[0.5rem] hover:bg-[#ddd] dark:hover:bg-[#374151]'
+              className='w-full flex items-center gap-1  py-2.5 px-3.5 sm:pl-5 pl-2 pr-0 cursor-pointer font-medium text-left text-xs sm:text-base rounded-[0.5rem] hover:bg-[#ddd] dark:hover:bg-[#374151]'
             >
               <span className='min-[650px]:w-[30%] w-[33%]'>{item.format}</span>
               <span className='min-[650px]:w-[30%] w-[33%]'>
                 {item.resolution}
               </span>
-              <span className='min-[650px]:w-[30%] w-[33%]'>
-                <div className='inline-flex items-center border py-0.5 px-1 bg-black text-white rounded text-[10px] sm:text-xs font-medium hover:bg-black/80 transition-colors'>
+              <span className='min-[650px]:w-[30%] w-[20%]'>
+                <div className='inline-flex items-center border sm:py-0.5 sm:px-1 p-[2px] bg-black text-white rounded text-[9px] min-[400px]:text-[10px] sm:text-xs font-medium hover:bg-black/80 transition-colors'>
                   {item.quality}
                 </div>
               </span>
@@ -56,7 +56,7 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
         </TooltipProvider>
       </div>
 
-      <div className='flex items-center gap-2'>
+      <div className='flex items-center gap-1 sm:gap-2'>
         <DownloadIcon />
         <Icon
           icon={
@@ -116,6 +116,7 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
             </svg>
           }
           tooltip='QrCode'
+          className='max-sm:hidden'
         />
       </div>
     </div>
