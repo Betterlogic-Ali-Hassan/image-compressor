@@ -44,9 +44,9 @@ const Footer = () => {
       </div>
       <div className='container !pb-0'>
         <div className='pt-8 border-t border-border'>
-          <div className='flex items-center justify-between'>
+          <div className='flex items-center justify-between max-md:flex-col gap-3 max-md:items-start'>
             <Logo />
-            <ul className='flex items-center gap-8 flex-wrap'>
+            <ul className='flex items-center md:gap-8 gap-4 flex-wrap'>
               {[
                 "Cookies Policy",
                 "EULA",
