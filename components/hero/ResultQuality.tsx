@@ -41,7 +41,7 @@ const ResultQuality: React.FC<ResultQualityProps> = ({ item }) => {
                 {item.resolution}
               </span>
               <span className='min-[650px]:w-[30%] w-[20%]'>
-                <div className='inline-flex items-center border sm:py-0.5 sm:px-1 p-[2px] bg-black text-white rounded text-[9px] min-[400px]:text-[10px] sm:text-xs font-medium hover:bg-black/80 transition-colors'>
+                <div className='inline-flex items-center border sm:py-0.5 sm:px-1 p-[2px] bg-black text-white rounded text-[10px] sm:text-xs font-medium hover:bg-black/80 transition-colors'>
                   {item.quality}
                 </div>
               </span>
