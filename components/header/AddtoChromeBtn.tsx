@@ -28,11 +28,11 @@ const AddtoChromeBtn = ({
       </PopoverTrigger>
       <PopoverContent
         className={cn(
-          "px-4 pt-3 pb-[18px] max-[400px]:w-[300px] w-[400px]  bg-background border-border border-2 rounded-[6px] mt-2",
+          "px-4 pt-3 pb-[18px]  w-[400px]  bg-background border-border border-2 rounded-[6px] mt-2",
           mobile && "w-[260px]"
         )}
       >
-        <div className=' sm:flex-row flex-col   flex items-start gap-4 mt-4 relative '>
+        <div className='   flex items-start gap-4 mt-4 relative '>
           <div>
             <Image src='/foxi.webp' alt='img' height={62} width={62} />
           </div>

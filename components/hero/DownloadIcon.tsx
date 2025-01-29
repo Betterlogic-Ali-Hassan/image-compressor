@@ -43,7 +43,7 @@ export const DownloadIcon: React.FC = () => {
         setIsLoading(true);
         setTimeout(() => {
           setIsLoading(false);
-          setProgress(0);
+          setProgress(100);
         }, 2000);
       }, 200);
     }
@@ -58,7 +58,7 @@ export const DownloadIcon: React.FC = () => {
           onMouseLeave={handleMouseLeave}
           className={cn(
             "hover:bg-[#ddd] dark:hover:bg-gray-600 sm:h-10 sm:w-10 h-8 w-8 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center",
-            isDownloading && "rounded-full"
+            isDownloading && "rounded-full hover:bg-transparent "
           )}
         >
           {isDownloading ? (
