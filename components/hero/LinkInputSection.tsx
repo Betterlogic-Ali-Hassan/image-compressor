@@ -13,8 +13,8 @@ const LinkInputSection = () => {
   const [mediaBoxShow, setMediaBoxShow] = useState(false);
   const [error, setError] = useState("");
   const isValidUrl = (url: string) => {
-    const urlPattern =
-      /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+    const urlPattern = /^(https?:\/\/)?(www\.)?([\da-z.-]+\.[a-z.]{2,6})\/?.*$/;
+
     return urlPattern.test(url);
   };
 
