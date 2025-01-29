@@ -4,7 +4,7 @@ import Card from "./hero/Card";
 const Privacy = () => {
   return (
     <section className=' mt-[140px] '>
-      <div className='container !max-w-[1100px]'>
+      <div className='hero-container '>
         <Card>
           <h1 className='text-left'>Terms &amp; Conditions</h1>
           <h2 className='text-left my-6'>1. Acceptance of Terms</h2>
