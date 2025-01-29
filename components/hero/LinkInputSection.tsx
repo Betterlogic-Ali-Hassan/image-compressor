@@ -65,24 +65,29 @@ const LinkInputSection = () => {
 
   return (
     <Card className={cn("max-[650px]:p-5", mediaBoxShow && "pb-1")}>
-      <div className='flex items-center gap-3 relative max-sm:flex-col'>
-        <div className=' bg-foreground p-5 border border-border rounded-[8px] w-full h-full max-h-[62px] flex items-center justify-between'>
-          <input
-            type='text'
-            name='url'
-            value={url}
-            onChange={handleUrlChange}
-            id='url'
-            placeholder='Enter URL'
-            className=' bg-transparent border-none outline-none w-full text-base  h-[62px]'
-          />
-          {url !== "" && (
-            <span
-              className=' group bg-foreground rounded-full cursor-pointer'
-              onClick={handleClearLink}
-            >
-              <X className='opacity-50 group-hover:opacity-100' />
-            </span>
+      <div className='flex  gap-3 relative max-sm:flex-col'>
+        <div className='w-full '>
+          <div className=' bg-foreground p-5 border border-border rounded-[8px] w-full h-full max-h-[62px] flex items-center justify-between'>
+            <input
+              type='text'
+              name='url'
+              value={url}
+              onChange={handleUrlChange}
+              id='url'
+              placeholder='Enter URL'
+              className=' bg-transparent border-none outline-none w-full text-base  h-[62px]'
+            />
+            {url !== "" && (
+              <span
+                className=' group bg-foreground rounded-full cursor-pointer'
+                onClick={handleClearLink}
+              >
+                <X className='opacity-50 group-hover:opacity-100' />
+              </span>
+            )}
+          </div>
+          {error && url !== "" && (
+            <p className='text-red-500 font-medium text-sm mt-2'>{error}</p>
           )}
         </div>
 
@@ -94,9 +99,7 @@ const LinkInputSection = () => {
           {loader ? "Processing..." : "Paste Link"}
         </Button>
       </div>
-      {error && url !== "" && (
-        <p className='text-red-500 text-sm mt-2'>{error}</p>
-      )}
+
       <p className={cn("text-sm mt-2", mediaBoxShow && "hidden")}>
         By using our service you accept our{" "}
         <a href='#' className='underline text-primary '>
