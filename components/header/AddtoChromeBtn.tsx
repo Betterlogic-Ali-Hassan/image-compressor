@@ -28,7 +28,7 @@ const AddtoChromeBtn = ({
       </PopoverTrigger>
       <PopoverContent
         className={cn(
-          "px-4 pt-3 pb-[18px] max-[450px]:w-[370px] max-[450px]:mx-4 w-[400px]  bg-background border-border border-2 rounded-[6px] mt-2",
+          "px-4 pt-3 pb-[18px] max-[450px]:w-[344px] max-[450px]:mx-4 w-[400px]  bg-background border-border border-2 rounded-[6px] mt-2",
           mobile && "w-[260px]"
         )}
       >
@@ -37,7 +37,7 @@ const AddtoChromeBtn = ({
             <Image src='/foxi.webp' alt='img' height={62} width={62} />
           </div>
           <div>
-            <h3 className='text-[15px] leading-[1.4] font-normal mt-0'>
+            <h3 className='text-[15px] max-[450px]:text-sm leading-[1.4] font-normal mt-0'>
               <strong>Foxified</strong> The extension is required for YouTube
               Mp3 Converter to work properly.
             </h3>
