@@ -49,7 +49,7 @@ const Nav = () => {
         <li className='ml-2'>
           <Link
             href='/'
-            className='p-2 hover:text-primary transition-colors duration-200 text-base font-semibold text-primary'
+            className='p-2 hover:underline transition-colors duration-200 text-base font-semibold text-primary'
           >
             Home
           </Link>
@@ -62,7 +62,7 @@ const Nav = () => {
             onMouseLeave={() => handleMouseLeave(i)}
           >
             <DropdownMenu open={openDropdowns[i]} modal={false}>
-              <DropdownMenuTrigger className='flex items-center !border-none cursor-pointer !shadow-none p-2 hover:text-primary transition-colors duration-200  font-semibold outline-none !ring-0 text-base'>
+              <DropdownMenuTrigger className='flex items-center !border-none cursor-pointer !shadow-none p-2 hover:underline transition-colors duration-200  font-semibold outline-none !ring-0 text-base'>
                 {item}
               </DropdownMenuTrigger>
               <DropdownMenuContent className='mr-2 border-border'>
