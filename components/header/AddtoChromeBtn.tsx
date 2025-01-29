@@ -28,7 +28,7 @@ const AddtoChromeBtn = ({
       </PopoverTrigger>
       <PopoverContent
         className={cn(
-          "px-4 pt-3 pb-[18px] max-[400px]:w-[370px] max-[400px]:mx-4 w-[400px]  bg-background border-border border-2 rounded-[6px] mt-2",
+          "px-4 pt-3 pb-[18px] max-[450px]:w-[370px] max-[450px]:mx-4 w-[400px]  bg-background border-border border-2 rounded-[6px] mt-2",
           mobile && "w-[260px]"
         )}
       >
