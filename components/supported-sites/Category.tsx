@@ -4,7 +4,7 @@ import React from "react";
 const Category = () => {
   return (
     <div className='mt-14 flex '>
-      <ul className='w-1/2 px-4'>
+      <ul className='w-1/2 pr-4'>
         {categories.slice(0, 4).map((link, i) => (
           <li
             key={i}
