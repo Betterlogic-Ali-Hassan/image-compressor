@@ -61,7 +61,6 @@ const LinkInputSection = () => {
       setError("");
     }
 
-    // Check if the input URL is different from the stored URL
     const storedUrl = localStorage.getItem("savedUrl");
     if (inputUrl !== storedUrl) {
       setLoader(true);

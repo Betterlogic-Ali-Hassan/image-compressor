@@ -16,6 +16,10 @@ interface Props {
 
 export const Icon = ({ tooltip, icon, className }: Props) => {
   const [loading, setLoading] = useState(false);
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+
+  const handleMouseEnter = () => setTooltipVisible(true);
+  const handleMouseLeave = () => setTooltipVisible(false);
   const router = useRouter();
 
   const handleClick = () => {
@@ -27,8 +31,10 @@ export const Icon = ({ tooltip, icon, className }: Props) => {
 
   return (
     <TooltipProvider delayDuration={1}>
-      <Tooltip>
+      <Tooltip open={tooltipVisible}>
         <TooltipTrigger
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           onClick={handleClick}
           className={cn(
             "hover:bg-[#ddd] dark:hover:bg-gray-600 sm:h-10 sm:w-10 h-8 w-8 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center",

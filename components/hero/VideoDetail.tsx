@@ -3,7 +3,7 @@ import React from "react";
 
 const VideoDetail = () => {
   return (
-    <div className='flex items-start gap-2 mt-6 bg-foreground py-3 px-4 rounded-t-[0.5rem] '>
+    <div className='flex items-start gap-2 mt-6   p-4 rounded-t-[0.5rem] bg-[#00bc7e14]'>
       <Image
         src='/test.jpg'
         alt='Video-Thumbnail'

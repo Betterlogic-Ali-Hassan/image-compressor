@@ -14,13 +14,15 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
-import { Music } from "lucide-react";
+import { ChevronLeft, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PopUp from "./DownloadBtn";
 import VideoPlayer from "./VideoPlayer";
 import Card from "../hero/Card";
+import { useRouter } from "next/navigation";
 
 const Player: React.FC = () => {
+  const router = useRouter();
   const [play, setPlay] = useState<boolean>(false);
   const [mute, setMute] = useState<boolean>(false);
   const videoRef = useRef<{ seekTo: (time: number) => void } | null>(null);
@@ -123,9 +125,18 @@ const Player: React.FC = () => {
   };
 
   return (
-    <div className='mt-[52px] select-none'>
+    <div className='mt-[52px] '>
       <main className='hero-container'>
-        <Card className='p-0'>
+        <button
+          className='pl-2 pr-5 py-2 h-[42px] border flex items-center gap-2 rounded-[10px] font-medium border-border hover:bg-foreground '
+          onClick={() => router.push("/")}
+        >
+          <span className='h-6 w-6 border rounded-[8px] border-border flex items-center justify-center '>
+            <ChevronLeft size={18} />
+          </span>
+          Back
+        </button>
+        <Card className='p-0 mt-6'>
           <div className='px-4 sm:px-10 pt-10 flex   mb-4 flex-col gap-1'>
             <h1 className=' text-2xl text-left md:text-4xl font-bold tracking-tight'>
               YouTube Video Downloader
@@ -135,7 +146,7 @@ const Player: React.FC = () => {
             </p>
           </div>
 
-          <div className='px-4 sm:px-10 pb-10'>
+          <div className='px-4 sm:px-10 pb-10 select-none'>
             <VideoPlayer
               url='https://www.youtube.com/embed/RD4JPW6mKaU'
               playing={play}
