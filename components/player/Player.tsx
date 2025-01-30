@@ -128,7 +128,7 @@ const Player: React.FC = () => {
     <div className='mt-[52px] '>
       <main className='hero-container'>
         <button
-          className='pl-2 pr-5 py-2 h-[42px] border flex items-center gap-2 rounded-[10px] font-medium border-border hover:bg-foreground '
+          className='pl-2 pr-5 py-2 h-[42px] bg-foreground hover:bg-[#f2f2f2] dark:hover:bg-[#21222cd7] border flex items-center gap-2 rounded-[10px] font-medium border-border hover:bg-foreground '
           onClick={() => router.push("/")}
         >
           <span className='h-6 w-6 border rounded-[8px] border-border flex items-center justify-center '>
