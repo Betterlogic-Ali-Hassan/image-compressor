@@ -1,17 +1,20 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 
 interface CircularProgressProps {
   progress: number;
   size?: number;
   strokeWidth?: number;
+  className?: string;
 }
 
 export function CircularProgress({
   progress,
   size = 40,
   strokeWidth = 4,
+  className,
 }: CircularProgressProps) {
   const [dynamicSize, setDynamicSize] = useState(size);
 
@@ -48,7 +51,10 @@ export function CircularProgress({
         />
         {/* Progress circle */}
         <circle
-          className='text-black dark:text-white transition-all duration-300 ease-in-out'
+          className={cn(
+            "text-black dark:text-white transition-all duration-300 ease-in-out",
+            className
+          )}
           strokeWidth={strokeWidth}
           strokeDasharray={circumference}
           strokeDashoffset={offset}

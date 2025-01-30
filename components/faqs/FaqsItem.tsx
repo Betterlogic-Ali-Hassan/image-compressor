@@ -17,9 +17,11 @@ const FaqsItem = () => {
             className='border rounded-[0.5rem] px-5 py-0 border-border mb-4 '
           >
             <AccordionTrigger className='hover:no-underline !my-0 py-[17px] '>
-              <h6 className='text-sm font-bold  '> {faq.question}</h6>
+              <h6 className=' font-bold  text-base'> {faq.question}</h6>
             </AccordionTrigger>
-            <AccordionContent>{faq.answer}</AccordionContent>
+            <AccordionContent className='text-[15px]'>
+              {faq.answer}
+            </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
