@@ -9,8 +9,8 @@ const Logo = ({ className }: { className?: string }) => {
       href='/'
       className={cn("flex items-center gap-2 mr-[40px]", className)}
     >
-      <Image src='/logo.png' alt='logo' height={46} width={46} />
-      {/* <label className='font-bold text-text'>Image Compressor</label> */}
+      <Image src='/logo.svg' alt='logo' height={36} width={36} />
+      <label className='font-bold text-text text-lg'>SaveVideo</label>
     </Link>
   );
 };
