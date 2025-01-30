@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Card from "./Card";
 import { Button } from "../ui/button";
 import { Loader2, X } from "lucide-react";
@@ -13,77 +13,57 @@ const LinkInputSection = () => {
   const [loader, setLoader] = useState(false);
   const [mediaBoxShow, setMediaBoxShow] = useState(false);
   const [error, setError] = useState("");
+  const [url, setUrl] = useState("");
+
+  const mediaBoxRef = useRef<HTMLDivElement>(null);
+
   const isValidUrl = (url: string) => {
     const urlPattern = /^(https?:\/\/)?(www\.)?([\da-z.-]+\.[a-z.]{2,6})\/?.*$/;
     return urlPattern.test(url);
   };
 
-  const [url, setUrl] = useState("");
-  const mediaBoxRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const storedUrl = localStorage.getItem("savedUrl");
-    if (storedUrl) {
-      setUrl(storedUrl);
-      setMediaBoxShow(true);
-    }
-  }, []);
-
   const handlePasteLink = async () => {
     const text = await navigator.clipboard.readText();
-    const storedUrl = localStorage.getItem("savedUrl");
-    console.log("Pasted URL:", text);
-    console.log("Stored URL:", storedUrl);
+    setUrl(text);
 
-    if (text !== storedUrl) {
-      setUrl(text);
-      setLoader(true);
-      console.log("Loader set to true");
-      setTimeout(() => {
-        setLoader(false);
-        setMediaBoxShow(true);
-        localStorage.setItem("savedUrl", text);
-        console.log("Loader set to false, mediaBoxShow set to true");
-      }, 2000);
-    } else {
-      setUrl(text);
-      setMediaBoxShow(true);
+    if (!isValidUrl(text)) {
+      setError("URL is not supported");
+      setLoader(false);
+      setMediaBoxShow(false);
+      return;
     }
+
+    setError("");
+    setLoader(true);
+    setTimeout(() => {
+      setLoader(false);
+      setMediaBoxShow(true);
+    }, 2000);
   };
 
   const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputUrl = e.target.value;
     setUrl(inputUrl);
 
-    if (inputUrl && !isValidUrl(inputUrl)) {
+    if (!isValidUrl(inputUrl)) {
       setError("URL is not supported");
+      setLoader(false);
+      setMediaBoxShow(false);
     } else {
       setError("");
-    }
-
-    const storedUrl = localStorage.getItem("savedUrl");
-    if (inputUrl !== storedUrl) {
       setLoader(true);
-      console.log("Loader set to true (input change)");
       setTimeout(() => {
         setLoader(false);
         setMediaBoxShow(true);
-        localStorage.setItem("savedUrl", inputUrl);
-        console.log(
-          "Loader set to false, mediaBoxShow set to true (input change)"
-        );
       }, 2000);
-    } else {
-      setMediaBoxShow(true);
     }
   };
 
   const handleClearLink = () => {
     setUrl("");
+    setError("");
     setLoader(false);
     setMediaBoxShow(false);
-    localStorage.removeItem("savedUrl");
-    console.log("Link cleared");
   };
 
   return (
@@ -126,11 +106,11 @@ const LinkInputSection = () => {
 
         <p className={cn("text-sm mt-2", mediaBoxShow && "hidden")}>
           By using our service you accept our{" "}
-          <a href='#' className='underline text-primary '>
+          <a href='#' className='underline text-primary'>
             Terms of Service
           </a>{" "}
           and{" "}
-          <a href='/privacy' className='underline text-primary '>
+          <a href='/privacy' className='underline text-primary'>
             Privacy Policy
           </a>{" "}
         </p>
