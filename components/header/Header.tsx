@@ -33,7 +33,7 @@ const Header = () => {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 w-full z-50 transition-transform duration-500 ease-in-out -translate-y-full opacity-0 bg-white dark:bg-[#000]  border-b-2 flex items-center justify-between px-10 shadow-none border-border   h-[88px]  ",
+          "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out -translate-y-full opacity-0 bg-white dark:bg-[#000]  border-b-2 flex items-center justify-between px-10 shadow-none border-border   h-[88px]  ",
           showSticky && "translate-y-0 opacity-100"
         )}
       >
