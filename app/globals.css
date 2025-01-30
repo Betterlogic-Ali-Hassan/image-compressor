@@ -141,3 +141,41 @@ input,
 textarea {
   font-size: 16px !important;
 }
+.link {
+  text-decoration: none;
+  font-size: 17px;
+}
+.link a {
+  border-bottom: 1px solid #0073e6;
+}
+.link:hover {
+  color: #005ab3;
+}
+.link::before {
+  content: "";
+  width: 6px;
+  border-top: 2px solid #0073e6;
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+}
+.divider {
+  position: relative;
+  height: 1px;
+}
+
+.div-transparent:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgb(48, 49, 51),
+    transparent
+  );
+}

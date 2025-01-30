@@ -33,9 +33,8 @@ const Nav = () => {
       setOpenDropdowns((prev) =>
         prev.map((open, i) => (i === index ? false : open))
       );
-    }, 400);
+    }, 30);
 
-    // Store the timeout ID to clear if necessary
     setTimeoutIds((prev) => {
       const updated = [...prev];
       updated[index] = id;
@@ -65,11 +64,11 @@ const Nav = () => {
               <DropdownMenuTrigger className='flex items-center !border-none cursor-pointer !shadow-none p-2 hover:underline transition-colors duration-200  font-semibold outline-none !ring-0 text-base'>
                 {item}
               </DropdownMenuTrigger>
-              <DropdownMenuContent className='mr-2 border-border'>
+              <DropdownMenuContent className='mr-2 border-border mt-5 rounded-t-none'>
                 {(i === 0 ? imageCompressionData : dataPages).map((item, j) => (
                   <DropdownMenuItem
                     key={j}
-                    className='hover:text-primary font-semibold cursor-pointer'
+                    className='hover:underline font-semibold cursor-pointer'
                   >
                     {item}
                   </DropdownMenuItem>

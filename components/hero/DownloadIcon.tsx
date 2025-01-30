@@ -58,7 +58,7 @@ export const DownloadIcon: React.FC = () => {
           onMouseLeave={handleMouseLeave}
           className={cn(
             "hover:bg-[#ddd] dark:hover:bg-gray-600 sm:h-10 sm:w-10 h-8 w-8 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center",
-            isDownloading && "rounded-full hover:bg-transparent mr-2 "
+            isDownloading && "rounded-full hover:bg-transparent  "
           )}
         >
           {isDownloading ? (

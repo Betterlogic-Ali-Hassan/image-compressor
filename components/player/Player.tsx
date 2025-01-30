@@ -124,7 +124,7 @@ const Player: React.FC = () => {
 
   return (
     <div className='mt-[52px] select-none'>
-      <main className='container'>
+      <main className='hero-container'>
         <Card className='p-0'>
           <div className='px-4 sm:px-10 pt-10 flex   mb-4 flex-col gap-1'>
             <h1 className=' text-2xl text-left md:text-4xl font-bold tracking-tight'>
