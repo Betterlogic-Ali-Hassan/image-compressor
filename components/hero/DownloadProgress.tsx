@@ -20,7 +20,7 @@ export function CircularProgress({
 
   useEffect(() => {
     const updateSize = () => {
-      setDynamicSize(window.innerWidth < 640 ? 34 : 40);
+      setDynamicSize(window.innerWidth < 640 ? 34 : size);
     };
 
     updateSize();
@@ -66,7 +66,12 @@ export function CircularProgress({
           cy={dynamicSize / 2}
         />
       </svg>
-      <span className='absolute text-[10.5px] sm:text-xs font-medium flex items-center justify-center'>
+      <span
+        className={cn(
+          "absolute text-[10.5px] sm:text-xs font-medium flex items-center justify-center",
+          size === 32 && " sm:text-[9.5px]"
+        )}
+      >
         {Math.round(progress)}%
       </span>
     </div>

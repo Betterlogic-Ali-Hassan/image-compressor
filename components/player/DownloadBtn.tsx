@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useState } from "react";
 import { CircularProgress } from "../hero/DownloadProgress";
-import { cn } from "@/lib/utils";
 
 interface PopProps {
   sliderValue: [number, number];
@@ -49,14 +48,18 @@ const DownloadBtn: React.FC<PopProps> = ({ sliderValue, formatTime }) => {
 
   return (
     <Button
-      className={cn(
-        "relative rounded-[10px] bg-black  text-white  hover:bg-black/90 h-11 dark:bg-gray-700 dark:hover:bg-gray-600",
-        isDownloading && "py-4 px-2 "
-      )}
+      className='relative rounded-[10px] bg-black  text-white  hover:bg-black/90 h-11 dark:bg-gray-700 dark:hover:bg-gray-600'
       onClick={simulateDownload}
     >
       {isDownloading ? (
-        <CircularProgress progress={progress} className='text-green-700' />
+        <>
+          <CircularProgress
+            progress={progress}
+            className='text-green-700'
+            size={32}
+          />
+          Converting
+        </>
       ) : isLoading ? (
         <>
           <LucideLoaderCircle className='sm:w-[22px] sm:h-[22px] h-[19px] w-[19px] animate-spin' />
