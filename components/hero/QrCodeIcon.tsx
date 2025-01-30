@@ -59,14 +59,14 @@ const QrCodeIcon = () => {
             </Tooltip>
           </TooltipProvider>
         </PopoverTrigger>
-        <PopoverContent className='bg-background border-border flex items-center justify-center w-[180px] flex-col min-h-[232px]'>
+        <PopoverContent className='bg-background border-border flex items-center justify-center w-[180px] flex-col min-h-[240px]'>
           {loading ? (
-            <Loader2 size={32} className='animate-spin' />
+            <Loader2 size={34} className='animate-spin' />
           ) : (
             <>
               {" "}
               <Image src='/qrcode.gif' alt='QrCode' height={180} width={180} />
-              <p className='flex items-start gap-2 text-xs mt-1'>
+              <p className='flex items-start gap-2 text-xs mt-3'>
                 <TbScan
                   size={20}
                   className='flex-shrink-0 mt-0.5 text-[blue]'
