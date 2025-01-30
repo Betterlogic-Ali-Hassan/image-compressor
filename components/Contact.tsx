@@ -40,7 +40,7 @@ const Contact = () => {
             <div className='mb-5'>
               <button
                 type='submit'
-                className='sm:max-w-[150px] w-full bg-[#00bc7d1b] text-primary shadow-none rounded-[8px] transition-all duration-300 px-5 hover:brightness-[0.8] h-[40px]'
+                className='sm:max-w-[150px] w-full bg-text text-background shadow-none rounded-[8px] transition-all duration-300 px-5 hover:bg-black/80 dark:hover:bg-white/80 h-[40px]'
               >
                 Send
               </button>

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 import Card from "./Card";
 import { Button } from "../ui/button";
 import { Loader2, X } from "lucide-react";
@@ -14,18 +15,42 @@ const LinkInputSection = () => {
   const [error, setError] = useState("");
   const isValidUrl = (url: string) => {
     const urlPattern = /^(https?:\/\/)?(www\.)?([\da-z.-]+\.[a-z.]{2,6})\/?.*$/;
-
     return urlPattern.test(url);
   };
 
   const [url, setUrl] = useState("");
   const mediaBoxRef = useRef<HTMLDivElement>(null);
 
-  const handlePasteLink = () => {
-    navigator.clipboard.readText().then((text) => {
+  useEffect(() => {
+    const storedUrl = localStorage.getItem("savedUrl");
+    if (storedUrl) {
+      setUrl(storedUrl);
+      setMediaBoxShow(true);
+    }
+  }, []);
+
+  const handlePasteLink = async () => {
+    const text = await navigator.clipboard.readText();
+    const storedUrl = localStorage.getItem("savedUrl");
+    console.log("Pasted URL:", text);
+    console.log("Stored URL:", storedUrl);
+
+    if (text !== storedUrl) {
       setUrl(text);
-    });
+      setLoader(true);
+      console.log("Loader set to true");
+      setTimeout(() => {
+        setLoader(false);
+        setMediaBoxShow(true);
+        localStorage.setItem("savedUrl", text);
+        console.log("Loader set to false, mediaBoxShow set to true");
+      }, 2000);
+    } else {
+      setUrl(text);
+      setMediaBoxShow(true);
+    }
   };
+
   const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputUrl = e.target.value;
     setUrl(inputUrl);
@@ -35,45 +60,39 @@ const LinkInputSection = () => {
     } else {
       setError("");
     }
+
+    // Check if the input URL is different from the stored URL
+    const storedUrl = localStorage.getItem("savedUrl");
+    if (inputUrl !== storedUrl) {
+      setLoader(true);
+      console.log("Loader set to true (input change)");
+      setTimeout(() => {
+        setLoader(false);
+        setMediaBoxShow(true);
+        localStorage.setItem("savedUrl", inputUrl);
+        console.log(
+          "Loader set to false, mediaBoxShow set to true (input change)"
+        );
+      }, 2000);
+    } else {
+      setMediaBoxShow(true);
+    }
   };
+
   const handleClearLink = () => {
     setUrl("");
     setLoader(false);
     setMediaBoxShow(false);
+    localStorage.removeItem("savedUrl");
+    console.log("Link cleared");
   };
-
-  useEffect(() => {
-    if (url !== "" && error === "") {
-      setLoader(true);
-      const timer = setTimeout(() => {
-        setLoader(false);
-        setMediaBoxShow(true);
-      }, 2000);
-
-      return () => clearTimeout(timer);
-    } else {
-      setLoader(false);
-    }
-  }, [url]);
-
-  useEffect(() => {
-    if (mediaBoxShow && mediaBoxRef.current) {
-      mediaBoxRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-      setTimeout(() => {
-        window.scrollBy({ top: -30, behavior: "smooth" });
-      }, 300);
-    }
-  }, [mediaBoxShow]);
 
   return (
     <div ref={mediaBoxRef}>
       <Card className={cn("max-[650px]:p-5", mediaBoxShow && "pb-1")}>
-        <div className='flex  gap-3 relative max-sm:flex-col'>
+        <div className='flex gap-3 relative max-sm:flex-col'>
           <div className='w-full'>
-            <div className=' bg-foreground p-5 border border-border rounded-[8px]  w-full h-full max-h-[62px] flex items-center justify-between'>
+            <div className='bg-foreground p-5 border border-border rounded-[8px] w-full h-full max-h-[62px] flex items-center justify-between'>
               <input
                 type='text'
                 name='url'
@@ -81,11 +100,11 @@ const LinkInputSection = () => {
                 onChange={handleUrlChange}
                 placeholder='Enter URL'
                 autoComplete='off'
-                className=' bg-transparent border-none outline-none w-full text-base  h-[62px]'
+                className='bg-transparent border-none outline-none w-full text-base h-[62px]'
               />
               {url !== "" && (
                 <span
-                  className=' group bg-foreground rounded-full !cursor-pointer  '
+                  className='group bg-foreground rounded-full !cursor-pointer'
                   onClick={handleClearLink}
                 >
                   <X className='opacity-50 group-hover:opacity-100 cursor-pointer' />
@@ -120,7 +139,7 @@ const LinkInputSection = () => {
           className={cn(
             "transition-all duration-1000 ease-in-out overflow-hidden",
             mediaBoxShow
-              ? " max-h-[800px] max-[650px]:max-h-[900px] pb-6"
+              ? "max-h-[800px] max-[650px]:max-h-[900px] pb-6"
               : "max-h-0"
           )}
         >

@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/tooltip";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { useRouter } from "next/navigation"; // Updated import
+import { useRouter } from "next/navigation";
 interface Props {
   tooltip: string;
   icon: React.ReactNode;
@@ -21,10 +21,7 @@ export const Icon = ({ tooltip, icon, className }: Props) => {
   const handleClick = () => {
     if (tooltip === "Trim Video") {
       setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-        router.push("/player");
-      }, 2000);
+      router.push("/player");
     }
   };
 
