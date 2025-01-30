@@ -7,10 +7,13 @@ const Logo = ({ className }: { className?: string }) => {
   return (
     <Link
       href='/'
-      className={cn("flex items-center gap-2 mr-[40px]", className)}
+      className={cn(
+        "flex items-center gap-2 font-bold text-text text-lg mr-[40px]",
+        className
+      )}
     >
       <Image src='/logo.svg' alt='logo' height={36} width={36} />
-      <label className='font-bold text-text text-lg'>SaveVideo</label>
+      SaveVideo
     </Link>
   );
 };
