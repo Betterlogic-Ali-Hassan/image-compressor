@@ -7,51 +7,47 @@ import {
 } from "@/components/ui/tooltip";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { useRouter } from "next/navigation"; // Updated import
 interface Props {
   tooltip: string;
   icon: React.ReactNode;
   className?: string;
 }
+
 export const Icon = ({ tooltip, icon, className }: Props) => {
-  const [tooltipVisible, setTooltipVisible] = useState(false);
-  const handleMouseEnter = () => setTooltipVisible(true);
-  const handleMouseLeave = () => setTooltipVisible(false);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (tooltip === "Trim Video") {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        router.push("/player");
+      }, 2000);
+    }
+  };
 
   return (
-    <>
-      <TooltipProvider delayDuration={1}>
-        <Tooltip open={tooltipVisible}>
-          {tooltip === "Trim Video" ? (
-            <Link href='/player'>
-              <TooltipTrigger
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className={cn(
-                  "hover:bg-[#ddd] dark:hover:bg-gray-600 sm:h-10 sm:w-10 h-8 w-8 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center",
-                  className
-                )}
-              >
-                {icon}
-              </TooltipTrigger>
-            </Link>
-          ) : (
-            <TooltipTrigger
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className={cn(
-                "hover:bg-[#ddd] dark:hover:bg-gray-600 sm:h-10 sm:w-10 h-8 w-8 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center",
-                className
-              )}
-            >
-              {icon}
-            </TooltipTrigger>
+    <TooltipProvider delayDuration={1}>
+      <Tooltip>
+        <TooltipTrigger
+          onClick={handleClick}
+          className={cn(
+            "hover:bg-[#ddd] dark:hover:bg-gray-600 sm:h-10 sm:w-10 h-8 w-8 rounded-[7px] bg-[#eee] dark:bg-gray-700 flex items-center justify-center",
+            className
           )}
-          <TooltipContent>
-            <p className='text-xs font-medium'>{tooltip}</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-    </>
+        >
+          {loading ? (
+            <div className='h-5 w-5 border-2 border-t-transparent border-text rounded-full animate-spin'></div>
+          ) : (
+            icon
+          )}
+        </TooltipTrigger>
+        <TooltipContent>
+          <p className='text-xs font-medium'>{tooltip}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 };

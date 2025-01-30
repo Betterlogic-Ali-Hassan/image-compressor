@@ -16,8 +16,10 @@ const TopFooter = () => {
               empty page and inspire fresh thoughts.
             </p>
           </div>
-          <div className='mt-11 flex justify-center relative z-30'>
-            <AddtoChromeBtn className='!rounded-[10px]' />
+          <div className='h-[56px]'>
+            <div className='mt-11 flex justify-center relative z-30 '>
+              <AddtoChromeBtn className='!rounded-[10px]' />
+            </div>
           </div>
         </div>
       </div>

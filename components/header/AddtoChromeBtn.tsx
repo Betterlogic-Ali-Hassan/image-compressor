@@ -20,10 +20,8 @@ const AddtoChromeBtn = ({
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <button className={cn("btn ml-6  ", className)}>
-          <span>
-            <Image src='/chrome.webp' alt='Chrome' height={26} width={26} />
-            Add to Chrome
-          </span>
+          <Image src='/chrome.webp' alt='Chrome' height={26} width={26} />
+          Add to Chrome
         </button>
       </PopoverTrigger>
       <PopoverContent
@@ -41,7 +39,7 @@ const AddtoChromeBtn = ({
               <strong>Foxified</strong> The extension is required for YouTube
               Mp3 Converter to work properly.
             </h3>
-            <button className='flex items-center gap-2 bg-primary hover:bg-[#00bc7def] text-white px-6 py-3 rounded-full mt-3'>
+            <button className='flex items-center gap-2 bg-primary hover:bg-[#00bc7def] text-white px-6 py-3  rounded-full mt-3'>
               <Image src='/chrom.webp' alt='img' height={20} width={20} />
               Let&apos;s Go
             </button>

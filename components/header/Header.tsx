@@ -45,7 +45,7 @@ const Header = () => {
           <Logo />
           <Nav />
         </div>
-        <div className='flex items-center'>
+        <div className='flex items-center h-full'>
           <Setting />
           <ThemeToggle />
           <MobileHeader />
