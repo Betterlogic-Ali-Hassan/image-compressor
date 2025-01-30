@@ -8,7 +8,7 @@ const Logo = ({ className }: { className?: string }) => {
     <Link
       href='/'
       className={cn(
-        "flex items-center gap-2 font-bold text-text text-lg mr-[40px]",
+        "flex items-center gap-2 font-bold text-text text-lg mr-3",
         className
       )}
     >
