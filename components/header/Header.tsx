@@ -33,14 +33,14 @@ const Header = () => {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out -translate-y-full opacity-0 bg-white dark:bg-[#000]  border-b-2 flex items-center justify-between px-10 shadow-none border-border   h-[88px]  ",
+          "fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out -translate-y-full opacity-0 bg-white dark:bg-[#000]  border-b-2 flex items-center justify-between px-4 sm:px-10 shadow-none border-border   h-[88px]  ",
           showSticky && "translate-y-0 opacity-100"
         )}
       >
         <StickyHeader />
       </header>
 
-      <header className='bg-white dark:bg-[#000] border-b-2 flex items-center justify-between px-10 shadow-none border-border z-40 h-[88px] w-full'>
+      <header className='bg-white dark:bg-[#000] border-b-2 flex items-center justify-between px-4 sm:px-10 shadow-none border-border z-40 h-[88px] w-full'>
         <div className='flex items-center gap-6'>
           <Logo />
           <Nav />
