@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { TbScan } from "react-icons/tb";
+
 import {
   Tooltip,
   TooltipContent,
@@ -11,15 +13,25 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Image from "next/image";
+import { Loader2 } from "lucide-react";
 
 const QrCodeIcon = () => {
   const [tooltipVisible, setTooltipVisible] = useState(false);
+  const [popoverOpen, setPopOverOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const handleMouseEnter = () => setTooltipVisible(true);
   const handleMouseLeave = () => setTooltipVisible(false);
+  const handleClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
+
   return (
     <div className='max-sm:hidden'>
-      <Popover>
-        <PopoverTrigger>
+      <Popover open={popoverOpen} onOpenChange={setPopOverOpen}>
+        <PopoverTrigger onClick={handleClick}>
           <TooltipProvider delayDuration={1}>
             <Tooltip open={tooltipVisible}>
               <TooltipTrigger
@@ -47,8 +59,22 @@ const QrCodeIcon = () => {
             </Tooltip>
           </TooltipProvider>
         </PopoverTrigger>
-        <PopoverContent className='bg-background border-border flex items-center justify-center w-[160px]'>
-          <Image src='/qrcode.gif' alt='QrCode' height={160} width={160} />
+        <PopoverContent className='bg-background border-border flex items-center justify-center w-[180px] flex-col min-h-[232px]'>
+          {loading ? (
+            <Loader2 size={32} className='animate-spin' />
+          ) : (
+            <>
+              {" "}
+              <Image src='/qrcode.gif' alt='QrCode' height={180} width={180} />
+              <p className='flex items-start gap-2 text-xs mt-1'>
+                <TbScan
+                  size={20}
+                  className='flex-shrink-0 mt-0.5 text-[blue]'
+                />
+                Scan this QR code on your phone to get the download
+              </p>
+            </>
+          )}
         </PopoverContent>
       </Popover>
     </div>

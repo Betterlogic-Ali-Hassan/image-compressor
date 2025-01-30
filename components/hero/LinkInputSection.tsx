@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Card from "./Card";
 import { Button } from "../ui/button";
 import { Loader2, X } from "lucide-react";
@@ -65,6 +65,18 @@ const LinkInputSection = () => {
     setLoader(false);
     setMediaBoxShow(false);
   };
+  useEffect(() => {
+    if (mediaBoxShow && mediaBoxRef.current) {
+      mediaBoxRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      setTimeout(() => {
+        window.scrollBy({ top: -30, behavior: "smooth" });
+      }, 300);
+    }
+  }, [mediaBoxShow]);
 
   return (
     <div ref={mediaBoxRef}>
