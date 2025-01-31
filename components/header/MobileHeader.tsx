@@ -14,7 +14,22 @@ import Link from "next/link";
 import { imageCompressionOption } from "@/constant/imageCompressionOption";
 import { ChevronDown } from "lucide-react";
 import AddtoChromeBtn from "./AddtoChromeBtn";
-
+const NavLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => (
+  <li className='mb-[10px]'>
+    <Link
+      href={href}
+      className='hover:text-primary  py-[7px] px-[15px] text-left rounded-[5px] block font-semibold'
+    >
+      {children}
+    </Link>
+  </li>
+);
 const MobileHeader = () => {
   const [showOptions, setShowOptions] = useState(false);
   const handleShowOption = () => {
@@ -59,30 +74,9 @@ const MobileHeader = () => {
                       </Link>
                     </li>
                   ))}
-                <li className='mb-[10px]'>
-                  <Link
-                    href='#'
-                    className='hover:text-primary  py-[7px] px-[15px] text-left rounded-[5px] block font-semibold'
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li className='mb-[10px]'>
-                  <Link
-                    href='#'
-                    className='hover:text-primary text-left py-[7px] px-[15px] rounded-[5px] block font-semibold'
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li className='mb-[10px]'>
-                  <Link
-                    href='#'
-                    className='hover:text-primary text-left py-[7px] px-[15px] rounded-[5px] block font-semibold'
-                  >
-                    Terms of Service
-                  </Link>
-                </li>
+                <NavLink href='/contact'>Contact Us</NavLink>
+                <NavLink href='/contact'>Privacy Policy</NavLink>
+                <NavLink href='/contact'>Terms of Service</NavLink>
               </ul>
             </SheetDescription>
             <AddtoChromeBtn className='mx-4 mt-0' mobile />
