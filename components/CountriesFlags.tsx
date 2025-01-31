@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 interface CountryFlagProps {
@@ -5,6 +6,7 @@ interface CountryFlagProps {
   width?: number;
   height?: number;
   alt?: string;
+  className?: string;
 }
 
 export function CountryFlag({
@@ -12,6 +14,7 @@ export function CountryFlag({
   width = 20,
   height = 18,
   alt = "",
+  className,
 }: CountryFlagProps) {
   const flagUrl = `https://flagcdn.com/${flagCode.replace(".png", "")}.svg`;
 
@@ -21,7 +24,7 @@ export function CountryFlag({
       width={width}
       height={height}
       alt={alt}
-      className='mr-2'
+      className={cn("mr-2", className)}
       onError={(e) => {
         e.currentTarget.src = "/placeholder.svg";
       }}

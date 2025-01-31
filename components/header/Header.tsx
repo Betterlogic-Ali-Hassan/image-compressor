@@ -5,9 +5,10 @@ import Nav from "./Nav";
 import ThemeToggle from "./ThemeToggle";
 import MobileHeader from "./MobileHeader";
 import AddtoChromeBtn from "./AddtoChromeBtn";
-import Setting from "./Setting";
+// import Setting from "./Setting";
 import StickyHeader from "./StickyHeader";
 import { cn } from "@/lib/utils";
+import Languages from "./Languages";
 
 const Header = () => {
   const [showSticky, setShowSticky] = useState(false);
@@ -46,7 +47,8 @@ const Header = () => {
           <Nav />
         </div>
         <div className='flex items-center h-full'>
-          <Setting />
+          {/* <Setting /> */}
+          <Languages />
           <ThemeToggle />
           <MobileHeader />
           <AddtoChromeBtn className='max-md:hidden' />
