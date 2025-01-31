@@ -2,6 +2,9 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { useState } from "react";
+import { isAndroid } from "react-device-detect";
+import { TfiAndroid } from "react-icons/tfi";
+
 import {
   Popover,
   PopoverContent,
@@ -20,8 +23,17 @@ const AddtoChromeBtn = ({
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <button className={cn("btn ml-6  ", className)}>
-          <Image src='/chrome.webp' alt='Chrome' height={26} width={26} />
-          Add to Chrome
+          {isAndroid ? (
+            <>
+              <TfiAndroid size={24} />
+              Download Apk
+            </>
+          ) : (
+            <>
+              <Image src='/chrome.webp' alt='Chrome' height={26} width={26} />
+              Add to Chrome
+            </>
+          )}
         </button>
       </PopoverTrigger>
       <PopoverContent
