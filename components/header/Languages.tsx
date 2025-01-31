@@ -8,7 +8,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
 
 import { X } from "lucide-react";
 import { LanguageButton } from "./LanguageButton";
@@ -16,8 +15,17 @@ import { LANGUAGES } from "@/constant/SettingsData";
 import { useSettings } from "@/context/SettingContext";
 import { CountryFlag } from "../CountriesFlags";
 import { useState } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const Languages: React.FC = () => {
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+  const handleMouseEnter = () => setTooltipVisible(true);
+  const handleMouseLeave = () => setTooltipVisible(false);
   const { selectedLanguage, setSelectedLanguage } = useSettings();
   const [selectedFlag, setSelectedFlag] = useState("gb");
 
@@ -28,19 +36,27 @@ const Languages: React.FC = () => {
 
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button
-          variant='outline'
-          size='icon'
-          className='h-9 w-9 rounded-[6px] border-border ml-5 shadow-sm hover:bg-foreground '
-        >
-          <CountryFlag
-            flagCode={selectedFlag}
-            className='m-0'
-            width={24}
-            height={24}
-          />
-        </Button>
+      <SheetTrigger>
+        <TooltipProvider delayDuration={1}>
+          <Tooltip open={tooltipVisible}>
+            <TooltipTrigger
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className='inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-9 w-9 rounded-[6px] border-border ml-5 shadow-sm hover:bg-foreground '
+            >
+              <CountryFlag
+                flagCode={selectedFlag}
+                className='m-0'
+                width={24}
+                height={24}
+              />
+            </TooltipTrigger>
+
+            <TooltipContent>
+              <p className='text-xs font-medium'>{selectedLanguage}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </SheetTrigger>
 
       <SheetContent side='bottom'>
