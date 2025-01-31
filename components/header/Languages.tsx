@@ -34,7 +34,12 @@ const Languages: React.FC = () => {
           size='icon'
           className='h-9 w-9 rounded-[6px] border-border ml-5 shadow-sm hover:bg-foreground '
         >
-          <CountryFlag flagCode={selectedFlag} className='m-0' />
+          <CountryFlag
+            flagCode={selectedFlag}
+            className='m-0'
+            width={24}
+            height={24}
+          />
         </Button>
       </SheetTrigger>
 

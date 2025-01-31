@@ -21,11 +21,12 @@ export const LanguageButton: React.FC<LanguageButtonProps> = ({
     onClick={onClick}
     variant='outline'
     className={cn(
-      "flex items-center gap-1 rounded-[6px] border-border hover:bg-foreground ",
+      "flex items-center gap-2.5 rounded-[6px] border-border hover:bg-foreground h-[40px]",
       isSelected && "bg-text text-background hover:bg-text"
     )}
   >
     <CountryFlag flagCode={flag} />
+
     <span className='text-xs'>{name}</span>
   </Button>
 );

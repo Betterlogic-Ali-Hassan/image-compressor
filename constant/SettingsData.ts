@@ -1,5 +1,3 @@
-
-
 export const LANGUAGES = [
   { name: "العربية", flag: "sa" },
   { name: "简体中文", flag: "cn" },
@@ -25,11 +23,6 @@ export const LANGUAGES = [
   { name: "Türkçe", flag: "tr" },
   { name: "Українська", flag: "ua" },
   { name: "Tiếng Việt", flag: "vn" },
-]
+];
 
-
-
-export const QUALITIES = ["720p", "360p", "1080p", "1440p", "2160p", "2320p"]
-
-
-
+export const QUALITIES = ["720p", "360p", "1080p", "1440p", "2160p", "2320p"];

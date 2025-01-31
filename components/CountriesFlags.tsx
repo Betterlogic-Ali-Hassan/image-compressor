@@ -11,8 +11,8 @@ interface CountryFlagProps {
 
 export function CountryFlag({
   flagCode,
-  width = 20,
-  height = 18,
+  width = 26,
+  height = 28,
   alt = "",
   className,
 }: CountryFlagProps) {
@@ -24,7 +24,7 @@ export function CountryFlag({
       width={width}
       height={height}
       alt={alt}
-      className={cn("mr-2", className)}
+      className={cn(" border", className)}
       onError={(e) => {
         e.currentTarget.src = "/placeholder.svg";
       }}
